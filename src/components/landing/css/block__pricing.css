@@ -1,0 +1,11 @@
+.block__pricing{
+    background-color: var(--brand_heading);
+    height: 150px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+.block__pricing__text{
+    font-size: 1.5rem;
+    color: var(--brand_text);
+}

@@ -1,0 +1,79 @@
+.block__email_leads{
+    width: 100%;
+    text-align: center;
+    padding: 60px;
+}
+.block__email_leads .container_500{
+    width: 500px;
+    margin: auto;
+    color: var(--brand_text);
+}
+.block__email_leads h5{
+    margin: 0;
+    font-size: 1.2em;
+}
+.block__email_leads p{
+    font-size: .8rem;
+}
+
+.block__email_leads label{
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: .9rem;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.block__email_leads input{
+    width: 100%;
+    line-height: 1.2rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.block__email_leads input:hover{
+    border: 1px solid #ccc;
+}
+.block__email_leads input:focus{
+    outline: .5px solid #aaa;
+    box-shadow: none;
+}
+.block__email_leads .checkbox{
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    padding-top: 20px ;
+}
+.block__email_leads .checkbox input{
+    width: fit-content;
+}
+.block__email_leads .checkbox span{
+    width: 100%;
+    font-size: .9rem;
+}
+
+.block__email_leads button{
+    display: block;
+    width: auto;
+    margin: auto;
+    /**/
+    border-radius: 25px;
+    padding: 13px 18px;
+    border: none;
+    background-color: var(--brand_secondary);
+    color: white;
+    line-height: 24px;
+    font-size: .8rem;
+    font-family: var(--font_family);
+    font-weight: 700;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.block__email_leads .container_500 > span{
+    font-size: .6rem;
+    margin: 0;
+}

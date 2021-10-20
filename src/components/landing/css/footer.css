@@ -1,0 +1,44 @@
+footer{
+    background-color: var(--brand_text);
+    /* height: 100px; */
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+footer .container_960{
+    width: 960px;
+    margin: auto;
+}
+footer .container_960 ul{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+footer .container_960  ul li{
+    list-style: none;
+    /* font-weight: 100; */
+    font-size: 0.9rem;
+}
+footer .container_960 > ul li >ul{
+    display: flex;
+    flex-flow: column;
+}
+footer .container_960 > ul li >ul a{
+    color: white;
+    text-decoration: none;
+}
+footer .container_960 > ul li >ul a:hover{
+    text-decoration: underline;
+}
+footer .container_960 > ul li >ul li{
+    font-size: .8rem;
+}
+footer .container_960 > ul li >ul li.with{
+    padding-top: 10px;
+}
+footer .container_960 > ul li >ul span{
+    display: block;
+    font-size: .9rem;
+}

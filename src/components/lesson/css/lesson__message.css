@@ -1,0 +1,132 @@
+.lesson__message {
+    margin-top   : 30px;
+    width        : 100%;
+    border       : 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 400px;
+}
+
+.lesson__message button {
+    background-color: var(--brand_secondary);
+    border          : none;
+    border-radius   : 30px;
+    padding         : 5px 25px;
+    color           : white;
+    height          : 60px;
+    padding-left    : 60px;
+    padding-right   : 60px;
+}
+
+.lesson__message>button {
+    border-radius: 5px;
+    display      : block;
+    transform    : translate(-1px, -1px);
+    padding-left : 30px;
+    padding-right: 30px;
+    height       : 30px;
+
+}
+
+.lesson__message strong {
+    display       : block;
+    padding-left  : 30px;
+    padding-right : 30px;
+    padding-top   : 20px;
+    padding-bottom: 20px;
+    font-weight   : 600;
+}
+
+.lesson__message .comment {
+    display     : flex;
+    flex-flow   : row;
+    margin-left : 30px;
+    margin-right: 30px;
+}
+
+.lesson__message .comment .left {
+    width        : 150px;
+    display      : flex;
+    flex-flow    : column;
+    align-items  : center;
+    padding-right: 10px;
+}
+
+.lesson__message .comment .left .image {
+    width           : 60px;
+    height          : 60px;
+    background-color: red;
+    border-radius   : 50%;
+    background-image: url(https://s.gravatar.com/avatar/9190e124a88d67ac95f930daa72a72ba?d=mm);
+    background-size : contain;
+}
+
+.lesson__message .comment .left .name {
+    border: 1px solid rgb(248, 200, 111);
+    ;
+    min-width       : 100%;
+    text-align      : center;
+    border-radius   : 12px;
+    background-color: rgb(255, 244, 223);
+    font-size       : .7rem;
+    height          : 24px;
+    line-height     : 24px;
+}
+
+.lesson__message .comment .right {
+    border       : 1px solid rgb(248, 200, 111);
+    border-radius: 5px;
+    background   : rgb(255, 244, 223);
+    padding      : 20px 20px;
+    width        : 100%;
+}
+
+.lesson__message .comment h4 {
+    margin     : 0;
+    font-weight: 600;
+}
+
+.lesson__message .comment textarea {
+    width        : inherit;
+    min-width   : 100%;
+    max-width   : 100%;
+    min-height   : 100px;
+    max-height   : 100px;
+    margin       : 0;
+    padding      : 0;
+    display      : block;
+    border       : 1px solid #eee;
+    border-radius: 10px 10px 0 0;
+    position     : relative;
+    font-family  : var(--font-family);
+    padding      : 10px;
+    resize: none;
+}
+
+.lesson__message .comment .upload {
+    background-color: rgb(224, 224, 224);
+    margin          : 0;
+    padding-left    : 20px;
+    border-radius   : 0 0 10px 10px;
+    height          : 60px;
+    margin-bottom   : 10px;
+    width           : 100%;
+    display         : flex;
+    align-items     : center;
+}
+
+.lesson__message .comment .upload .icon {
+    width           : 30px;
+    height          : 30px;
+    background-image: url(https://fedora.teachablecdn.com/assets/icon-image-add-2bb59d5f21dbca28cca9cf9e6530fc84f468b86806ca92da9e2bdafa2aa398d0.svg);
+    background-size : cover;
+}
+
+.lesson__message .comment .right {
+    display    : flex;
+    flex-flow  : column;
+    align-items: flex-start;
+}
+
+.lesson__message .comment button {
+    align-self: flex-end;
+}

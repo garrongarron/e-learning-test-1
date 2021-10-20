@@ -1,0 +1,53 @@
+.banner{
+    margin-top: 60px;
+    /* min-height: 50vh; */
+    height:calc(80vh - 60px);
+    height: 400px;
+    /* height:calc(80vh - 60px); */
+    background-image: url(https://assets.teachablecdn.com/page-block-default-images/banner.jpg);
+    /* background-color: red; */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+.banner__inner{
+    width:628px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    
+}
+.banner__inner h1{
+    font-size: 2.2rem;
+    line-height: 72px;
+    font-weight: 700;
+    margin: 0;
+}
+.banner__inner p{
+    color: white;
+    font-size: .8rem;
+    font-family: var(--font_family);
+    font-weight: 700;
+    margin: 0;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.banner__button{
+    border-radius: 25px;
+    padding: 13px 18px;
+    border: none;
+    background-color: var(--brand_secondary);
+    color: white;
+    line-height: 24px;
+    font-size: .8rem;
+    font-family: var(--font_family);
+    font-weight: 700;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+

@@ -1,0 +1,25 @@
+.lesson__video{
+    background-color: #eee;
+}
+.lesson__video div.video{
+    width: 100%;
+    border: 2px solid var(--brand_secondary);;
+    background-color: var(--brand_secondary);;
+    display: grid;
+    place-items: center;
+    
+}
+.lesson__video div.video video{
+    width: 100%;
+    
+}
+
+.lesson__video .miniature{
+    transition: all 0.8s;
+    width: 300px !important;
+    height: auto !important;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}

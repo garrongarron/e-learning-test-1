@@ -1,0 +1,47 @@
+.lesson__aside {
+    width              : var(--lesson_aside);
+    /* background-color: gray; */
+    box-shadow         : 0 0 10px gray;
+    margin-top         : 60px;
+    height             : calc(100vh - 60px);
+    padding-top        : 30px;
+    overflow-y: scroll;
+    position : fixed;
+}
+.lesson__aside .card{
+    border-bottom: 1px solid var(--brand_heading);
+    padding-left       : 20px;
+    padding-right      : 20px;
+}
+.lesson__aside h2 {
+    margin        : 0;
+    font-size     : .8rem;
+    padding-bottom: 15px;
+}
+
+.lesson__aside .bar {
+    background-color: var(--brand_heading);
+    border-radius   : 4px;
+    height          : 8px;
+    width           : 100%;
+    position        : relative;
+}
+
+.lesson__aside .quantity {
+    position        : absolute;
+    width           : 30%;
+    height          : 8px;
+    border-radius   : 4px;
+    background-color: var(--brand_primary);
+}
+
+.lesson__aside .percentage {
+    font-weight: bold;
+}
+
+.lesson__aside .desription {
+    padding-top: 15px;
+    width      : 100%;
+    text-align : center;
+    padding-bottom: 30px;
+}

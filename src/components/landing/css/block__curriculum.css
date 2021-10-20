@@ -1,0 +1,87 @@
+.block__curriculum {
+    width        : 100%;
+    /* border-top: 2px solid red; */
+    padding-top  : 50px;
+}
+
+.block__curriculum__710 {
+    width     : 710px;
+    margin    : auto;
+    text-align: center;
+    color     : var(--brand_text);
+}
+
+.block__curriculum__710 h4 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.block__curriculum__710>span {
+    padding            : 5px;
+    /* background-color: var(--brand_secondary);;  */
+    background-color   : #b7f1ea;
+    font-size          : .6rem;
+    font-weight        : bold;
+    border-radius      : 5px;
+    text-transform     : uppercase;
+}
+
+.block__curriculum__710 p {
+    font-size: .8rem;
+}
+
+.block__curriculum__section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.block__curriculum__section h5{
+    width: 100%;
+    background-color: var(--brand_heading);
+    padding: 12px;
+    text-align: left;
+    font-size: .9rem;
+    margin: 0;
+}
+.block__curriculum__section ul{
+    padding: 0;
+    margin: 0;
+}
+.block__curriculum__section ul li{
+    list-style: none;
+    height: 50px;
+    
+    font-size: .8rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: 1px solid white;
+    display: flex;
+    align-items: center;
+}
+.block__curriculum__section ul li:hover{
+    background-color: #cccccc;
+}
+
+.block__curriculum__section .icon{
+    background-image: url(https://fedora.teachablecdn.com/assets/icons/youtube-brands-43c32617529d416391eed20028644a3045ecdb646146cc146bc8a6250fec979d.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width:18px;
+    height: 18px;
+}
+.block__curriculum__section .description{
+    text-align: left;
+    width: 100%;
+    margin-left: 10px;
+    font-size: .8rem;
+}
+
+.block__curriculum__section .button{
+    padding: 3px;
+    /* background-color: var(--brand_heading); */
+    background-color: #b7f1ea;
+    border-radius: 3px;
+    
+}

@@ -1,0 +1,38 @@
+.block__image-with-text{
+    margin-top: 50px;
+}
+.block__image-with-text__center{
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.block__image-with-text__center.reverse{
+    flex-flow: row-reverse;
+}
+.block__image-with-text__image{
+    background-image: url(https://assets.teachablecdn.com/page-block-default-images/image-with-text-1.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 47%;
+    height: 90vh;
+}
+
+.block__image-with-text__text{
+    width: 50%;
+    min-height: 90vh;
+    text-align: center;
+    color: var(--brand_text);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+}
+.block__image-with-text__text h2{
+    font-size: 1.2rem;
+}
+.block__image-with-text__text p{
+    font-size: .8rem;
+    line-height: 1.3rem;
+}

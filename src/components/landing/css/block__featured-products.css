@@ -1,0 +1,109 @@
+.block__featured-products {
+    margin-top      : 50px;
+    background-color: var(--brand_heading);
+    text-align      : center;
+    color           : var(--brand_text);
+    padding-top     : 50px;
+}
+
+.block__featured-products h5 {
+    font-size: 1.5rem;
+    margin   : 0;
+
+}
+
+.block__featured-products>p {
+    font-size: .8rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.block__featured-products button{
+    padding            : 5px;
+    /* background-color: var(--brand_secondary);;  */
+    background-color   : #b7f1ea;
+    font-size          : .6rem;
+    font-weight        : bold;
+    border-radius      : 5px;
+    text-transform     : uppercase;
+    border: none;
+}
+.block__featured-products ul{
+    padding: 0;
+    width: 960px;
+    padding-top: 20px;
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+}
+.block__featured-products ul li{
+    list-style: none;
+    width: 100%;
+    margin: 12px;
+    box-shadow: 0 0 20px gray;
+    transition: all 0.2s ease;
+}
+.block__featured-products ul li:hover{
+    box-shadow: 0 0 20px black;
+}
+.block__featured-products ul li .image{
+    min-height: 150px;
+    background-color: rebeccapurple;
+    background-image: url(https://assets.teachablecdn.com/page-block-default-images/featured-products-course-card-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.block__featured-products h6{
+    margin: 0;
+    font-size: .9rem;
+    padding-top: 30px;
+}
+.block__featured-products span{
+    font-size: .8rem;
+}
+
+.block__featured-products .container{
+    min-height: 200px;
+    position: relative;
+    color: var(--brand_secondary); 
+}
+.block__featured-products .bottom{
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: .8rem;
+    color:var(--brand_secondary);
+}
+.block__featured-products .avatar{
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    background-color: gray;  
+    background-image: url(https://fedora.teachablecdn.com/assets/user-0ae68ba67e6ead32c4ff1cc668d501f896bddd5ef1667ac3e9ff29ce601ed653.png);
+    background-size: cover;
+    background-position: center center;
+}
+.block__featured-products .author{
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.block__featured-products > input[type="button"]{
+    padding            : 15px;
+    background-color: var(--brand_secondary); 
+    font-size          : .8rem;
+    font-weight        : bold;
+    border-radius      : 5px;
+    border: none;
+    color: white;
+    margin: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
