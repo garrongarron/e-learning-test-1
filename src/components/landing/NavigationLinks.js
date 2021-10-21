@@ -1,34 +1,30 @@
 import Component from "../../../js/Component.js";
 
 class NavigationLinks extends Component {
-//	setState() { return { n: JSON.parse(localStorage.getItem('n')) || 0 } }
-//	setChildComponent() { return [Header]; }
-//	addEventListener() { return ['click'] }
-//    doSomething(e) {
-//		console.log('Event: ' + e )
-//		this.state.n++
-//		localStorage.setItem('n', JSON.stringify(this.state.n));
-//		this.setNewState(this.state)
- //   }
-    template({}){
+    //	setState() { return { n: JSON.parse(localStorage.getItem('n')) || 0 } }
+    //	setChildComponent() { return [Header]; }
+    //	addEventListener() { return ['click'] }
+    //    doSomething(e) {
+    //		console.log('Event: ' + e )
+    //		this.state.n++
+    //		localStorage.setItem('n', JSON.stringify(this.state.n));
+    //		this.setNewState(this.state)
+    //   }
+    template({ }) {
         return `
-    <ul class="navbar__menu__list menu" id="hamburger-menu" role="menu" aria-describedby="hamburger"
-        tabindex="0" aria-hidden="false">
-
+    <ul class="navbar__menu__list menu" id="hamburger-menu" role="menu" aria-describedby="hamburger" tabindex="0" aria-hidden="false">
         <li>
-
+           <div class="auth"></div>
+        </li>
+        <li>
             <a href="/courses/enrolled" target="">
                 My Products
             </a>
-
         </li>
-
         <li>
-
             <a href="/courses" target="">
                 All Products
             </a>
-
         </li>
 
 

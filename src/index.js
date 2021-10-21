@@ -1,5 +1,6 @@
 import Layout from "./components/landing/Layout.js";
 import cssloader from "./CssLoader.js";
+import './tools/auth/index.js'
 
 let layout = new Layout();
 layout.querySelector('body')
