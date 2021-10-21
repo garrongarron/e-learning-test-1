@@ -2,10 +2,10 @@ let storage = {}
 let tmp = []
 const cssloader = (_folder = null, _cssList = null) => {
     let insert = () => {
-        var style = document.createElement('style');
+        let style = document.querySelector('style')
+        style = (!style)?document.createElement('style'):style
         style.innerHTML = localStorage.getItem(_folder)
-        var h = document.getElementsByTagName('head')[0];
-        h.parentNode.insertBefore(style, h);
+        document.head.appendChild(style)
     }
     function cb() {
         let folder = _folder || 'src/components/landing/css/'
@@ -22,6 +22,7 @@ const cssloader = (_folder = null, _cssList = null) => {
             'header.css',
         ];
         if (localStorage.getItem(_folder)) {
+            console.log('css from localStorage');
             insert()
             return
         }

@@ -1,12 +1,16 @@
 import Layout from "./components/landing/Layout.js";
 import cssloader from "./CssLoader.js";
-import './tools/auth/index.js'
+import init from './tools/auth/index.js'
 
-let layout = new Layout();
-layout.querySelector('body')
+setTimeout(() => {
+    let layout = new Layout();
+    document.body.innerHTML = ''
+    document.body.appendChild(layout.exec())
+    init()
+}, 500);
 
 
-let folder =  'src/components/landing/css/' 
+let folder = 'src/components/landing/css/'
 let cssList = [
     'block__banner.css',
     'block__column.css',
@@ -16,7 +20,7 @@ let cssList = [
     'block__image-with-text.css',
     'block__pricing.css',
     'block__text.css',
-    'font.css',
+    
     'footer.css',
     'header.css',
 ];

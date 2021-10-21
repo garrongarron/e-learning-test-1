@@ -1,21 +1,30 @@
 import Component from "../../../js/Component.js";
 
 class Banner1 extends Component {
-//	setState() { return { n: JSON.parse(localStorage.getItem('n')) || 0 } }
-//	setChildComponent() { return [Header]; }
-//	addEventListener() { return ['click'] }
-//    doSomething(e) {
-//		console.log('Event: ' + e )
-//		this.state.n++
-//		localStorage.setItem('n', JSON.stringify(this.state.n));
-//		this.setNewState(this.state)
- //   }
-    template({}){
+    setState() {
+        this.dataUrl = 'api/banner.json'
+        return JSON.parse(localStorage.getItem(this.dataUrl) || '{}')
+    }
+    beforeAppendChild() {
+        if (localStorage.getItem(this.dataUrl)) return;
+        fetch(this.dataUrl).then(data => data.json()).then(data => {
+            this.state = data
+            localStorage.setItem(this.dataUrl, JSON.stringify(this.state));
+            this.setNewState(data)
+        })
+    }
+    addEventListener() { return ['click'] }
+    doSomething(e) {
+        console.log('Event: ' + e)
+
+    }
+    template({ }) {
+        let { h1, p, button } = this.state;
         return `<section class="banner">
             <div class="banner__inner">
-                <h1>Example Banner</h1>
-                <p>Showcase your course or coaching, an announcement, or big feature. Use an eye-catching subheader to give your audience more context.</p>
-                <button class="banner__button">Comprar el curso</button> 
+                <h1>${h1}</h1>
+                <p>${p}</p>
+                <button class="banner__button" click="doSomething">${button}</button> 
             </div>
         </section>`
     }
