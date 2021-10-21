@@ -18,7 +18,6 @@ class VideoProvider {
                 }).then(data => {
                     data.push({date:new Date().getTime() + 1000 * 60 *60 }) //an hour from now
                     this.url[videoId] = data
-                    console.log(this.url);
                     localStorage.setItem('videos', JSON.stringify(this.url))
                     res(this.url[videoId]);
                 }).catch(err => rej(err))

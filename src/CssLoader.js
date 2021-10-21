@@ -1,6 +1,14 @@
+let storage = {}
+let tmp = []
 const cssloader = (_folder = null, _cssList = null) => {
+    let insert = () => {
+        var style = document.createElement('style');
+        style.innerHTML = localStorage.getItem(_folder)
+        var h = document.getElementsByTagName('head')[0];
+        h.parentNode.insertBefore(style, h);
+    }
     function cb() {
-        let folder = _folder || 'src/components/landing/css/' 
+        let folder = _folder || 'src/components/landing/css/'
         let cssList = _cssList || [
             'block__banner.css',
             'block__column.css',
@@ -10,20 +18,26 @@ const cssloader = (_folder = null, _cssList = null) => {
             'block__image-with-text.css',
             'block__pricing.css',
             'block__text.css',
-            'font.css',
             'footer.css',
             'header.css',
         ];
+        if (localStorage.getItem(_folder)) {
+            insert()
+            return
+        }
+        let files = []
         cssList.forEach(css => {
-            loadCss(folder+css);    
+            files.push(loadCss(folder + css))
         });
+        Promise.all(files).then((a) => {
+            localStorage.setItem(_folder, a.reverse().join('\n'))
+            insert()
+        })
     }
     function loadCss(filename) {
-        var l = document.createElement('link');
-        l.rel = 'stylesheet';
-        l.href = filename
-        var h = document.getElementsByTagName('head')[0];
-        h.parentNode.insertBefore(l, h);
+        return fetch(filename).then(data => data.text())
+
+
     }
     window.addEventListener('load', cb);
 }
