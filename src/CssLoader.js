@@ -6,7 +6,7 @@ const cssloader = (_folder = null, _cssList = null) => {
         style = (!style)?document.createElement('style'):style
         style.innerHTML = localStorage.getItem(_folder)
         document.head.appendChild(style)
-        // localStorage.removeItem(_folder)
+        localStorage.removeItem(_folder)
     }
     function cb() {
         let folder = _folder || 'src/components/landing/css/'

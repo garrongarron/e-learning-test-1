@@ -2,6 +2,7 @@ import Component from "../../../js/Component.js";
 import cache from "../../basic/Cache.js";
 import eventBus from "../../basic/EventBus.js";
 import videoProvider from "../../VideoProvider.js";
+import currentTimeManager from "./CurrentTimeManager.js";
 import spinner from "./Spinner.js";
 import videoResizing from "./VideoResizing.js";
 
@@ -37,7 +38,7 @@ class VideoComponet extends Component {
             }, 100);
             
             
-            video.addEventListener('loadeddata', function () {
+            video.addEventListener('loadeddata', () =>{
                 console.log(video.readyState);
                 let color = 'yellow'
                 if (video.readyState >= 2) {
@@ -46,6 +47,17 @@ class VideoComponet extends Component {
                     cache.appendChild(spinner)
                 }
                 div.style.border = `2px solid ${color}`;
+                video.currentTime = currentTimeManager.getCurrentTime(this.state.video)
+                let current = () => {
+                    currentTimeManager.setCurrentTime(this.state.video, video.currentTime)
+                }
+                video.addEventListener('mouseup', ()=>{
+                    console.log('up');
+                    setTimeout(() => {
+                        current()
+                    }, 100);
+                })
+                setInterval(current, 5000);
 
             });
             videoResizing(section, div, video)
