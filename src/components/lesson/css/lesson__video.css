@@ -3,13 +3,22 @@
 }
 .lesson__video div.video{
     width: 100%;
-    border: 2px solid var(--brand_secondary);;
+    /* border: 2px solid var(--brand_secondary);; */
     background-color: var(--brand_secondary);;
+    background-color: rgb(28, 28, 28);
     display: grid;
     place-items: center;
     
 }
-.lesson__video div.video video{
+.lesson__video div.video .relative{
+    position: relative;
+    width: 100%;
+    
+    display: grid;
+    place-items: center;
+}
+
+.lesson__video div.video  video{
     width: 100%;
     
 }
@@ -22,4 +31,15 @@
     bottom: 20px;
     right: 20px;
     z-index: 1;
+    
+}
+.lesson__video  .mask{
+    top: 0 !important;
+    position: absolute;
+    color: blue !important;
+    width: 100% !important;
+    height: 100% !important;
+    pointer-events: none;
+    display: grid;
+    place-items: center;
 }

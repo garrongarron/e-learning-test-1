@@ -16,7 +16,7 @@ class Banner1 extends Component {
     addEventListener() { return ['click'] }
     doSomething(e) {
         console.log('Event: ' + e)
-
+        location.href = '/lesson.html'
     }
     template({ }) {
         let { h1, p, button } = this.state;

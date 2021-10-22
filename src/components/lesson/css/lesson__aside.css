@@ -12,6 +12,22 @@
     border-bottom: 1px solid var(--brand_heading);
     padding-left       : 20px;
     padding-right      : 20px;
+    display:flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.lesson__aside .card img{
+    width :100px;
+    height: fit-content;
+}
+.lesson__aside .card .title{
+    font-size: .6rem !important;
+    padding-left: 10px;
+    font-weight   :bold;
 }
 .lesson__aside h2 {
     margin        : 0;

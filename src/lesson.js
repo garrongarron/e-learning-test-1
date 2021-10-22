@@ -1,16 +1,16 @@
-import Main from "./components/lesson/Main.js";
-import Aside from "./components/lesson/Aside.js";
-import Header from "./components/lesson/Header.js";
+import Layout from "./components/lesson/Layout.js";
 import cssloader from "./CssLoader.js";
 
-let header = new Header();
-header.querySelector('body')
 
-let aside = new Aside();
-aside.querySelector('body')
-let main = new Main();
-main.querySelector('body')
-let folder =  'src/components/lesson/css/' 
+setTimeout(() => {
+    let main = new Layout();
+    let x = document.querySelector('.layout')
+    x.parentNode.removeChild(x);
+    main.querySelector('body')
+    console.log('a');
+}, 1000)
+
+let folder = 'src/components/lesson/css/'
 let cssList = [
     'lesson__message.css',
     'lesson__quiz.css',
@@ -18,5 +18,6 @@ let cssList = [
     'lesson__header.css',
     'lesson__main.css',
     'lesson__aside.css',
+    'lesson__loader.css',
 ];
 cssloader(folder, cssList)

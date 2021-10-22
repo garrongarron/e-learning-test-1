@@ -8,7 +8,7 @@ let videoResizing = (section, div, video) => {
             section.style.height = data.height + 'px'
             video.addEventListener('resize', () => {
                 let dataVideo = video.getBoundingClientRect()
-                let dataDiv = div.getBoundingClientRect()
+                // let dataDiv = div.getBoundingClientRect()
                 div.style.width = dataVideo.width + 'px'
                 div.style.height = (dataVideo.height + 2) + 'px'
                 section.style.width = dataVideo.width + 'px'

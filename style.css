@@ -27,3 +27,7 @@ body {
     font-family: var(--font_family);
     font-size  : 20px;
 }
+.hide{
+    /* display: none !important; */
+    visibility: hidden !important;
+}

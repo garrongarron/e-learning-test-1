@@ -16,7 +16,7 @@ class VideoProvider {
                 fetch(this.urlProvider + videoId).then(data => {
                     return data.json();
                 }).then(data => {
-                    data.push({date:new Date().getTime() + 1000 * 60 *60 }) //an hour from now
+                    data.push({date:new Date().getTime() + 1000 * 60 * 5 }) //five minutes from now
                     this.url[videoId] = data
                     localStorage.setItem('videos', JSON.stringify(this.url))
                     res(this.url[videoId]);

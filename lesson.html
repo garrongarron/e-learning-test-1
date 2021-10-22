@@ -9,8 +9,344 @@
     <script src="src/lesson.js" type="module"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="font.css">
+    <link rel="icon" href="favicon.png" />
 </head>
+
 <body>
+    <div class="layout">
+        <header class="lesson__header">
+    <nav>
+        <div class="left">
+            <div class="home">
+                <svg width="24" height="24" title="Back to course curriculum">
+                    <path d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69ZM12 3L2 12H5V20H11V14H13V20H19V12H22L12 3Z" fill="currentColor"></path>
+                </svg>                        
+            </div>
+            <div class="settings">
+                <svg width="24" height="24" title="Back to course curriculum">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5023 12C19.5023 12.34 19.4723 12.66 19.4323 12.98L21.5423 14.63C21.7323 14.78 21.7823 15.05 21.6623 15.27L19.6623 18.73C19.5723 18.89 19.4023 18.98 19.2323 18.98C19.1723 18.98 19.1123 18.97 19.0523 18.95L16.5623 17.95C16.0423 18.34 15.4823 18.68 14.8723 18.93L14.4923 21.58C14.4623 21.82 14.2523 22 14.0023 22H10.0023C9.75228 22 9.54228 21.82 9.51228 21.58L9.13228 18.93C8.52228 18.68 7.96228 18.35 7.44228 17.95L4.95228 18.95C4.90228 18.97 4.84228 18.98 4.78228 18.98C4.60228 18.98 4.43228 18.89 4.34228 18.73L2.34228 15.27C2.22228 15.05 2.27228 14.78 2.46228 14.63L4.57228 12.98C4.53228 12.66 4.50228 12.33 4.50228 12C4.50228 11.67 4.53228 11.34 4.57228 11.02L2.46228 9.37C2.27228 9.22 2.21228 8.95 2.34228 8.73L4.34228 5.27C4.43228 5.11 4.60228 5.02 4.77228 5.02C4.83228 5.02 4.89228 5.03 4.95228 5.05L7.44228 6.05C7.96228 5.66 8.52228 5.32 9.13228 5.07L9.51228 2.42C9.54228 2.18 9.75228 2 10.0023 2H14.0023C14.2523 2 14.4623 2.18 14.4923 2.42L14.8723 5.07C15.4823 5.32 16.0423 5.65 16.5623 6.05L19.0523 5.05C19.1023 5.03 19.1623 5.02 19.2223 5.02C19.4023 5.02 19.5723 5.11 19.6623 5.27L21.6623 8.73C21.7823 8.95 21.7323 9.22 21.5423 9.37L19.4323 11.02C19.4723 11.34 19.5023 11.66 19.5023 12ZM17.5023 12C17.5023 11.79 17.4923 11.58 17.4523 11.27L17.3123 10.14L18.2023 9.44L19.2723 8.59L18.5723 7.38L17.3023 7.89L16.2423 8.32L15.3323 7.62C14.9323 7.32 14.5323 7.09 14.1023 6.91L13.0423 6.48L12.8823 5.35L12.6923 4H11.3023L11.1023 5.35L10.9423 6.48L9.88228 6.91C9.47228 7.08 9.06228 7.32 8.63228 7.64L7.73228 8.32L6.69228 7.9L5.42228 7.39L4.72228 8.6L5.80228 9.44L6.69228 10.14L6.55228 11.27C6.52228 11.57 6.50228 11.8 6.50228 12C6.50228 12.2 6.52228 12.43 6.55228 12.74L6.69228 13.87L5.80228 14.57L4.72228 15.41L5.42228 16.62L6.69228 16.11L7.75228 15.68L8.66228 16.38C9.06228 16.68 9.46228 16.91 9.89228 17.09L10.9523 17.52L11.1123 18.65L11.3023 20H12.7023L12.9023 18.65L13.0623 17.52L14.1223 17.09C14.5323 16.92 14.9423 16.68 15.3723 16.36L16.2723 15.68L17.3123 16.1L18.5823 16.61L19.2823 15.4L18.2023 14.56L17.3123 13.86L17.4523 12.73C17.4823 12.43 17.5023 12.21 17.5023 12ZM12.0023 8C9.79228 8 8.00228 9.79 8.00228 12C8.00228 14.21 9.79228 16 12.0023 16C14.2123 16 16.0023 14.21 16.0023 12C16.0023 9.79 14.2123 8 12.0023 8ZM10.0023 12C10.0023 13.1 10.9023 14 12.0023 14C13.1023 14 14.0023 13.1 14.0023 12C14.0023 10.9 13.1023 10 12.0023 10C10.9023 10 10.0023 10.9 10.0023 12Z" fill="CurrentColor"></path>
+                </svg>                        
+            </div>
+        </div>
+        <div class="right">
+            <div class="previous__lecture">
+                <svg width="24" height="24" aria-hidden="true">
+                    <path d="M15.41 16.59L10.83 12L15.41 7.41L14 6L8 12L14 18L15.41 16.59Z" fill="currentColor"></path>
+                </svg>
+                <span>Previous Lecture</span>
+            </div>
+            <div class="next__lesson"><span>Complete and Continue</span>
+
+            <svg width="24" height="24" aria-hidden="true">
+                <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.59Z" fill="currentColor"></path>
+            </svg>
+            </div>
+        </div>
+    </nav>
+</header>
+        <aside class="lesson__aside">
+    <div class="card">
+        <h2>3d Game Creations</h2>
+        <div class="bar">
+            <div class="quantity"></div>
+        </div>
+        <div class="desription">
+            <span class="percentage">0</span>%
+            <span>Complete</span>
+        </div>
+    </div>
+    <div>                
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/rr2H086z16s/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCGKeL_oCjaluuRnH6Y8UpNpoKHsw" click="doSomething" data-video="rr2H086z16s">
+                <div class="title" click="doSomething" data-video="rr2H086z16s">HTML y CSS curso práctico 💪 Desde cero [Tutorial Español]</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/ni3LEc3kvas/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBC3koO1SOpsZOflMIoELHQ9l5eaQ" click="doSomething" data-video="ni3LEc3kvas">
+                <div class="title" click="doSomething" data-video="ni3LEc3kvas">HTML5 y Visual Studio Code - Curso Desarrollo Web 💪</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/PIKPglimtYk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLD_a3ExDw9rfJaqTlEl9G0ZTibPEg" click="doSomething" data-video="PIKPglimtYk">
+                <div class="title" click="doSomething" data-video="PIKPglimtYk">#3 CSS Introducción para principiantes - Curso 2018 desde cero</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/QrJyvzjjDT8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLC1xCFxwBvBcAH-p3s-P6WqKRGvXA" click="doSomething" data-video="QrJyvzjjDT8">
+                <div class="title" click="doSomething" data-video="QrJyvzjjDT8">#4 Fundamentos de HTML 2018 - Encabezados o títulos - Curso HTML5 y CSS3</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/rQXF-_UwmGo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBUslXWIo9jCOQT4GkrZdHOXbU9Yg" click="doSomething" data-video="rQXF-_UwmGo">
+                <div class="title" click="doSomething" data-video="rQXF-_UwmGo">#5 Fundamentos de HTML 2018 - Párrafos y formatos - Curso HTML5 y CSS3</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/z5JkDNG8gtE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBaZPo7IDBFvuhpfQ_h2zx5KKCW2Q" click="doSomething" data-video="z5JkDNG8gtE">
+                <div class="title" click="doSomething" data-video="z5JkDNG8gtE">#6 Fundamentos de HTML 2018 - Atributos - Curso HTML5 y CSS3</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/EVAfRe6q-LY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCtxUJTlRyDn4lyh5vjNxKv9GrS_A" click="doSomething" data-video="EVAfRe6q-LY">
+                <div class="title" click="doSomething" data-video="EVAfRe6q-LY">Comentarios en HTML y listas 💪#7 Curso HTML5 y CSS3 2018</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/zpRlWZrLztc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCu9znZJUlJS7l0-w39P-jmOxAKTA" click="doSomething" data-video="zpRlWZrLztc">
+                <div class="title" click="doSomething" data-video="zpRlWZrLztc">#8 Semántica o estructura HTML5 - Curso 2018</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/RErT4Yrx9zw/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDsHpTObVro0TYxSu9AxPusFNMq5w" click="doSomething" data-video="RErT4Yrx9zw">
+                <div class="title" click="doSomething" data-video="RErT4Yrx9zw">#9 CSS desde cero principiantes - Selector, propiedades y valores</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/X0RNkXYS6Pg/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLChM9ovYkQWCyw4HAoMBh38PXuUQA" click="doSomething" data-video="X0RNkXYS6Pg">
+                <div class="title" click="doSomething" data-video="X0RNkXYS6Pg">#10 CSS desde cero principiantes - Aplicar estilos</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/ot965xP63eU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAEVl6kdRLSsOI49toftUCCYZIlGA" click="doSomething" data-video="ot965xP63eU">
+                <div class="title" click="doSomething" data-video="ot965xP63eU">#11 CSS desde cero principiantes - Colores</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/oqegxG13FzA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCHz07vEQ-p-smNz3ud075CSy2oAA" click="doSomething" data-video="oqegxG13FzA">
+                <div class="title" click="doSomething" data-video="oqegxG13FzA">#12 CSS desde cero principiantes - Margenes y Padding</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/-N-ch_rmZg0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCkJjH4fkDbzFP2XNGRck0K1untoA" click="doSomething" data-video="-N-ch_rmZg0">
+                <div class="title" click="doSomething" data-video="-N-ch_rmZg0">#13 Flexbox CSS3 Español 2018</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/X0qe4XJI5eY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBfS_5tAhOVly1I0eqDkVRGpt4E2A" click="doSomething" data-video="X0qe4XJI5eY">
+                <div class="title" click="doSomething" data-video="X0qe4XJI5eY">#15 Fundamentos de CSS 2018 - Elementos de bloque y de línea - Curso HTML5 y CSS3</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/GVjgi3Fg4Xg/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLC0qxIQKe5rzY90h35jxW-Hqv9Znw" click="doSomething" data-video="GVjgi3Fg4Xg">
+                <div class="title" click="doSomething" data-video="GVjgi3Fg4Xg">Menú HTML y CSS - #16 Barra de navegación Responsive</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/WAAA0fBZy4Y/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLApvapnpGPapGWXKJaCQ4Xc75tlAQ" click="doSomething" data-video="WAAA0fBZy4Y">
+                <div class="title" click="doSomething" data-video="WAAA0fBZy4Y">#14 Fundamentos de CSS 2018 - Pseudoclases Hover y Active - Curso HTML5 y CSS3</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/wUn-Z48wBPk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLA0VOCKmPMEImZIQ39IbEqr9Ciz5w" click="doSomething" data-video="wUn-Z48wBPk">
+                <div class="title" click="doSomething" data-video="wUn-Z48wBPk">Menú HTML y CSS 💪#17 Flexbox (NAVBAR 2018)</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/I9kAo_2dUNo/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLA0XK5O_1wro6b5PaEeZnSPn410EA" click="doSomething" data-video="I9kAo_2dUNo">
+                <div class="title" click="doSomething" data-video="I9kAo_2dUNo">Menú HTML y CSS - #18 Adaptabilidad</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/cALJnjFUJbg/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBLp9NdlTkHdSMt9OMesMtNncTDew" click="doSomething" data-video="cALJnjFUJbg">
+                <div class="title" click="doSomething" data-video="cALJnjFUJbg">Menú HTML y CSS - #19 Agregar botón</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/vEvdIzm-U-o/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLA6G4MyZfgEL0WVNBaeokon_1CHQw" click="doSomething" data-video="vEvdIzm-U-o">
+                <div class="title" click="doSomething" data-video="vEvdIzm-U-o">Menú HTML y CSS - #20 Javascript</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/VKfVrgrS0gk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDs1ZhE6qKuW8SIK-kJXGQPm9ai_Q" click="doSomething" data-video="VKfVrgrS0gk">
+                <div class="title" click="doSomething" data-video="VKfVrgrS0gk">#21 Crear tabla de precios con HTML y CSS - Introducción</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/Z0aspFpdOdA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBFvYRVWw0j7N9It7052KCD9Li1lQ" click="doSomething" data-video="Z0aspFpdOdA">
+                <div class="title" click="doSomething" data-video="Z0aspFpdOdA">#22 Crear tabla de precios con HTML y CSS - Centrando contenido</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/4DbzYOmr3vQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAOi7LCoSm5xERDPxdzylBYFWI6fQ" click="doSomething" data-video="4DbzYOmr3vQ">
+                <div class="title" click="doSomething" data-video="4DbzYOmr3vQ">#23 CSS letras bonitas 😜 - Google Fonts</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/AqQRnrH43ao/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLD4zwJ04_BlzcqxhT6pER51AGfbgw" click="doSomething" data-video="AqQRnrH43ao">
+                <div class="title" click="doSomething" data-video="AqQRnrH43ao">#24 Crear tabla de precios con HTML y CSS - Columnas con Flexbox</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/Td4R9uva8rQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLB_h59FTMXc32m0gE848Yegq1zuwQ" click="doSomething" data-video="Td4R9uva8rQ">
+                <div class="title" click="doSomething" data-video="Td4R9uva8rQ">#25 Crear tabla de precios con HTML y CSS - Estilos para las columnas</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/BgGA_raDZP0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAMA2sR8-Zyud72830f-p0CgIkU8A" click="doSomething" data-video="BgGA_raDZP0">
+                <div class="title" click="doSomething" data-video="BgGA_raDZP0">#26 Crear tabla de precios con HTML y CSS - Sombras</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/fZJsLmLD2tQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCY77vvAp7jGN2Aqg6s3-8bP9bZZQ" click="doSomething" data-video="fZJsLmLD2tQ">
+                <div class="title" click="doSomething" data-video="fZJsLmLD2tQ">#27 Crear tabla de precios con HTML y CSS - Botón</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/NzU0NUfOFz4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLDsB2CN4KdxGk2dN_l9nq9XuEODxQ" click="doSomething" data-video="NzU0NUfOFz4">
+                <div class="title" click="doSomething" data-video="NzU0NUfOFz4">#28 Crear tabla de precios con HTML y CSS - Tabla responsive</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/TtgkU8LMGAc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLB5WoqnNVECdXsmdXtC1cRfOe2ryQ" click="doSomething" data-video="TtgkU8LMGAc">
+                <div class="title" click="doSomething" data-video="TtgkU8LMGAc">CSS Flexbox Español #1 💪</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/-yRjE6YieoM/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCNSWWGyWJyX2NL4JxLICVFt6TOnQ" click="doSomething" data-video="-yRjE6YieoM">
+                <div class="title" click="doSomething" data-video="-yRjE6YieoM">CSS Flexbox Español #2</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/6xfhD0t5IdU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAqn0QMweFiyUVd84z1d9Q8hX-Glw" click="doSomething" data-video="6xfhD0t5IdU">
+                <div class="title" click="doSomething" data-video="6xfhD0t5IdU">#1 Proyecto Web con Flexbox (Html5 y Css3) - Maquetando el sitio y configuraciones Responsives</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/Ti7A1Fq7gew/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCZ-uTd2JnZg9dyMC6MC-e4hSIhKw" click="doSomething" data-video="Ti7A1Fq7gew">
+                <div class="title" click="doSomething" data-video="Ti7A1Fq7gew">#2 Creando Web con Flexbox (Html5 y Css3) - Font Awesome y Google Fonts</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/mMMpslBOJKQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLACZqpuXUtCe6QogsB5vQau0pPvCg" click="doSomething" data-video="mMMpslBOJKQ">
+                <div class="title" click="doSomething" data-video="mMMpslBOJKQ">#3 Creando Web con Flexbox (Html5 y Css3) - Agregar Imagen de fondo con Css</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/V_6TK57fN90/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCq1JwkPGQUaZMrzBMKclPJjQbZUw" click="doSomething" data-video="V_6TK57fN90">
+                <div class="title" click="doSomething" data-video="V_6TK57fN90">#4 Creando Web con Flexbox (Html5 y Css3) - Menú con Logo</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/MMGQsrq55rk/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLD8f1HgoHms9eRGjowi8avm83RArA" click="doSomething" data-video="MMGQsrq55rk">
+                <div class="title" click="doSomething" data-video="MMGQsrq55rk">#5 Creando Web con Flexbox (Html5 y Css3) - Agregando contenido Html</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/b0gzbE-2WVg/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBMeToXcYyykDGS2WkTu09t4QVZGg" click="doSomething" data-video="b0gzbE-2WVg">
+                <div class="title" click="doSomething" data-video="b0gzbE-2WVg">#6 Creando Web con Flexbox (Html5 y Css3) - Agregando los estilos Css finales</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/F8u9WlMltL0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCFlDL26sPRocL8k4XPvuD9rx03ng" click="doSomething" data-video="F8u9WlMltL0">
+                <div class="title" click="doSomething" data-video="F8u9WlMltL0">#7 Creando Web con Flexbox (Html5 y Css3) - Últimas modificaciones Responsives</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/YEQi1caS5j0/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCFU70yq8B1cPmnFY5R-BgT-8KKxA" click="doSomething" data-video="YEQi1caS5j0">
+                <div class="title" click="doSomething" data-video="YEQi1caS5j0">🙌¿Cómo utilizar VARIABLES en CSS? [ sin SASS 😱] Tutorial en Español</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/1kNwZbRiVcQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLA-iBEP94p2gEyx8soU6TiXHxG5RA" click="doSomething" data-video="1kNwZbRiVcQ">
+                <div class="title" click="doSomething" data-video="1kNwZbRiVcQ">Curso: Fundamentos de Bootstrap 5 [ Sass incluido + Guía con códigos ]</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/L_lWQZNhN7w/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBiOWSKCxI9g2SFesWZtkCi2UPLVA" click="doSomething" data-video="L_lWQZNhN7w">
+                <div class="title" click="doSomething" data-video="L_lWQZNhN7w">¿Cómo subir mi primer repositorio a Github? [Tutorial desde cero]</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/6bBmfiYmJE8/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLC9n_0KVz1LcSZcPz80P2d9Rku_cw" click="doSomething" data-video="6bBmfiYmJE8">
+                <div class="title" click="doSomething" data-video="6bBmfiYmJE8">Javascript #01: PseInt - Aprende a programar</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/-zf2LjR-_qI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLAN41KQN_hD80f8w_5-b0bK5YTmpQ" click="doSomething" data-video="-zf2LjR-_qI">
+                <div class="title" click="doSomething" data-video="-zf2LjR-_qI">Javascript #02: Variables, tipo de datos, if else, switch, while y más</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/J-wng0uCXPc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLBzj1HW0dxI0HKN8OXnQ152PESOGg" click="doSomething" data-video="J-wng0uCXPc">
+                <div class="title" click="doSomething" data-video="J-wng0uCXPc">Javascript #03: Array, for, for...of y function</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/9B3LkRsN814/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLB0QP098Rs231MzapuJDqr8deTMsA" click="doSomething" data-video="9B3LkRsN814">
+                <div class="title" click="doSomething" data-video="9B3LkRsN814">Javascript #04: var vs let vs const - arrow functions - array y más</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/k7ArEHLeMbI/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCaIj6Ktp3zFZQit1yUA_W0zZxSpw" click="doSomething" data-video="k7ArEHLeMbI">
+                <div class="title" click="doSomething" data-video="k7ArEHLeMbI">Javascript #05: Objetos literales</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/bYdUoqi6JXE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCsMpv1ncomXfuR7X72PzmjByzg4A" click="doSomething" data-video="bYdUoqi6JXE">
+                <div class="title" click="doSomething" data-video="bYdUoqi6JXE">Javascript #06: DOM fundamentos</div>
+            </div>
+            
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/p27du3EbVoE/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&amp;rs=AOn4CLCYe8pJ-XgNCP8gvHmnesUXtJzMSA" click="doSomething" data-video="p27du3EbVoE">
+                <div class="title" click="doSomething" data-video="p27du3EbVoE">Javascript #07: DOM template vs createElement</div>
+            </div>
+            
+        </div>
+</aside>
+        <main class="lesson__main">
+    <div class="title">
+        <svg width="24" height="24">
+            <path d="M21 3H3C1.89 3 1 3.89 1 5V17C1 18.1 1.89 19 3 19H8V21H16V19H21C22.1 19 22.99 18.1 22.99 17L23 5C23 3.89 22.1 3 21 3ZM21 17H3V5H21V17ZM16 11L9 15V7L16 11Z" fill="currentColor"></path>
+        </svg>
+        <h1>Title</h1>
+    </div>
+    <section class="lesson__video" style="width: 913px; height: 517.562px;"> 
+        <div class="video" style="width: 913px; height: 515.562px; border: 2px solid green;">
+            <div class="relative">
+                <video autoplay="false" controls="false" class="">
+                    <source>
+                </video>
+                <div class="mask"></div>
+            </div>
+        </div>
+        </section>
+    <section class="lesson__quiz">
+    <button>Quiz</button>
+    <span>2/2</span>
+    <div class="lesson__question">How many fingers there are in a human hand?</div>
+    <ul>
+        <li>option 1</li>
+        <li class="selected">option 2</li>
+        <li>option 3</li>
+    </ul>
+    <div class="lesson__buttons">
+        <button class="back">Back</button>
+        <button class="continue">continue</button>
+    </div>
+</section>
+    <section class="lesson__message">
+         <button>Discussion</button>
+         <strong>Post a comment</strong>
+         <div class="comment">
+            <div class="left">
+                <div class="image"></div>
+                <div class="name">Instructor</div>
+            </div>
+            <div class="right">
+                <h4>Juan Perez</h4>
+                <textarea placeholder="Leave a comment..." ce=""></textarea>
+                <div class="upload">
+                    <div class="icon"></div>
+                </div>
+                
+                <button>Post a comment</button>
+            </div>
+         </div>
+         <strong>0 a comment</strong>
+        </section>
+</main>
+    </div>
 </body>
 
 </html>
