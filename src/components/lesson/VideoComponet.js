@@ -34,7 +34,7 @@ class VideoComponet extends Component {
             video.src = url[0].url
             // video.play()
             setTimeout(() => {
-                video.removeAttribute('src')
+                // video.removeAttribute('src')
             }, 100);
             
             
@@ -82,7 +82,7 @@ class VideoComponet extends Component {
         return `<section class="lesson__video"> 
             <div class="video">
                 <div class="relative">
-                    <video autoplay="false" controls="false">
+                    <video  >
                         <source  />
                     </video>
                     <div class="mask"></div>

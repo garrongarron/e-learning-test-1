@@ -1,3 +1,4 @@
+// import '../js/videojs/video.js'
 import Layout from "./components/lesson/Layout.js";
 import cssloader from "./CssLoader.js";
 
@@ -5,7 +6,7 @@ import cssloader from "./CssLoader.js";
 setTimeout(() => {
     let main = new Layout();
     let x = document.querySelector('.layout')
-    x.parentNode.removeChild(x);
+    if (x) x.parentNode.removeChild(x);
     main.querySelector('body')
     console.log('a');
 }, 1000)
