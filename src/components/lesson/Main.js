@@ -17,7 +17,9 @@ class Main extends Component {
             </svg>
             <h1>Title</h1>
         </div>
-        <VideoPlayer></VideoPlayer>
+        <div class="lesson__video__container">
+            <VideoPlayer></VideoPlayer>
+        </div>
         <Quiz></Quiz>
         <Message></Message>
     </main>`

@@ -3,6 +3,22 @@ class VideoPlayerBehaviour {
         this.controller = null
         this.video = null
     }
+    watch() {
+        let watchMe = new IntersectionObserver(
+            (data) => {
+                let isSmall = !!this.controller.parentNode.classList.contains('pictureToPictureSmall')
+                if (!data[0].isIntersecting && this.video.readyState == 4) {
+                    if (!isSmall) this.videoSmall()
+                } else {
+                    this.videoRestoreFromSmall()
+                }
+            },
+            {
+                threshold: [0.7]
+            }
+        );
+        watchMe.observe(this.controller.parentNode.parentNode);
+    }
     start(controller) {
         this.controller = controller;
         this.controllerFadeInSystem()
@@ -27,24 +43,63 @@ class VideoPlayerBehaviour {
         //mouseposition
         this.timeline = this.controller.querySelector('.timeline-bar')
         this.timelineMousePosition()
-
+        //picture to picture
+        this.pictureToPicture = this.controller.querySelector('.pictureToPicture')
+        this.pictureToPictureToggle()
+        this.watch()
+    }
+    pictureToPictureToggle = () => {
+        this.pictureToPicture.addEventListener('click', this.pictureToPictureSystem)
+    }
+    fixVideo = (player) => {
+        let data = this.video.getBoundingClientRect()
+        //container
+        player.parentNode.style.width = data.width + 'px'
+        player.parentNode.style.height = data.height + 'px'
+        //player
+        player.style.position = 'fixed'
+        player.style.width = data.width + 'px'
+        player.style.height = data.height + 'px'
+        player.style.transition = 'all .5s';
+    }
+    unfixVIdeo = (player) => {
+        player.style.position = 'relative'
+        player.style.transition = 'none';
+    }
+    videoSmall = () => {
+        this.controller.parentNode.getBoundingClientRect()
+        this.fixVideo(this.controller.parentNode)
+        setTimeout(() => {
+            this.controller.parentNode.classList.add('pictureToPictureSmall')
+        }, 10)
+    }
+    videoRestoreFromSmall = () => {
+        this.unfixVIdeo(this.controller.parentNode)
+        this.controller.parentNode.classList.remove('pictureToPictureSmall')
+    }
+    pictureToPictureSystem = () => {
+        if (!this.controller.parentNode.classList.contains('pictureToPictureSmall')) {
+            this.videoSmall()
+        } else {
+            this.videoRestoreFromSmall()
+        }
     }
     timelineMousePosition() {
         let mouseDown = false
         let _seconds = 0
-        this.timeline.addEventListener('mouseover',()=>{
+        this.timeline.addEventListener('mouseover', () => {
             this.controller.querySelectorAll('.timeline-bar  .display').forEach(display => {
                 display.classList.add('fadeIn')
             })
         })
-        this.timeline.addEventListener('mouseout',()=>{
+        this.timeline.addEventListener('mouseout', () => {
             this.controller.querySelectorAll('.timeline-bar  .display').forEach(display => {
                 display.classList.remove('fadeIn')
             })
         })
         this.timeline.addEventListener('mouseup', (e) => { mouseDown = false })
-        this.timeline.addEventListener('mousedown', (e) => { 
-            mouseDown = true 
+        this.timeline.addEventListener('mousedown', (e) => {
+            mouseDown = true
             this.video.currentTime = _seconds
             this.processCurrentTime()
         })
@@ -55,7 +110,7 @@ class VideoPlayerBehaviour {
             let minutes = ~~(_seconds / 60)
             let seconds = (_seconds % 60)
             seconds = (seconds < 10) ? '0' + seconds : seconds
-            this.cursorPosition.innerHTML =  minutes + ':' + seconds
+            this.cursorPosition.innerHTML = minutes + ':' + seconds
             if (mouseDown) {
                 this.video.currentTime = _seconds
                 this.processCurrentTime()

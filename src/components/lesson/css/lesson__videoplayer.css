@@ -1,3 +1,7 @@
+.lesson__video__container{
+    background-color: rebeccapurple;
+    /* padding: 10px; */
+}
 .lesson__videoplayer{
     background-color: black;
     display: grid;

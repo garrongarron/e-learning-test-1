@@ -1,4 +1,11 @@
-
+.pictureToPictureSmall{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 300px !important;
+    height: auto !important;
+    z-index: 1;
+}
 .video-container{
     position: relative;
     /* height: fit-content; */
