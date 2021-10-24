@@ -16,6 +16,7 @@ let cssList = [
     'lesson__message.css',
     'lesson__quiz.css',
     'lesson__video.css',
+    'lesson__videoplayer.css',
     'lesson__header.css',
     'lesson__main.css',
     'lesson__aside.css',

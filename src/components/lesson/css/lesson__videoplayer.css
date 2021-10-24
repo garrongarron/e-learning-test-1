@@ -1,0 +1,7 @@
+.lesson__videoplayer{
+    background-color: black;
+    display: grid;
+    place-items: center;
+    outline-style: none;
+    position: relative;
+}

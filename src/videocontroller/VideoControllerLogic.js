@@ -73,7 +73,7 @@ class VideoControllerLogic {
         let timeline = document.querySelector('.timeline-bar')
         let current = document.querySelector('.timeline-bar .current')
         let play = document.querySelector('.video-controller .play')
-        let miniature = document.querySelector('.video-controller .miniature')
+        let pictureToPicture = document.querySelector('.video-controller .pictureToPicture')
         let controller = document.querySelector('.video-controller')
         
         setTimeout(() => {
@@ -105,7 +105,7 @@ class VideoControllerLogic {
             play.classList.add('play')
             play.classList.remove('pause')
         })
-        miniature.addEventListener("click", this.togglePictureInPicture)
+        pictureToPicture.addEventListener("click", this.togglePictureInPicture) 
         play.addEventListener("click", () => {
             if (video.paused) {
                 video.play()

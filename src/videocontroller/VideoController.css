@@ -1,12 +1,10 @@
-body{
-    margin: 0;
-}
+
 .video-container{
     position: relative;
     /* height: fit-content; */
     background-color   :black;
-    width: 640px;
-    /* width: 100%; */
+    /* width: 640px; */
+    width: 100%;
     height: 360px;
     display: grid;
     place-items: center;
@@ -29,7 +27,7 @@ video{
     color           : white;
     /* width           : 640px; */
     width           : 100%;
-    opacity         : .9;
+    /* opacity         : .9; */
     font-size       : 1.1rem;
     font-family: sans-serif;
     position: absolute;
@@ -88,10 +86,11 @@ video{
     display: grid;
     place-items: center;
     font-size: .7rem;
-    transition: opacity 0.5s;
+    transition: opacity .5s;
     opacity: 0;
+    pointer-events: none;
 }
-.timeline-bar  .display.cursor1{
+.timeline-bar  .display.current{
     background-color   :white;
     color: black;
 }
@@ -129,9 +128,11 @@ video{
     pointer-events: none;
 }
 
-.video-container .fadeIn{
+.video-controller.fadeIn,
+.timeline-bar  .display.fadeIn{
     opacity : 1 !important
 }
+
 
 
 
@@ -181,7 +182,7 @@ video{
     content: "\f104";
 }
 
-.video-controller .miniature:before {
+.video-controller .pictureToPicture:before {
     content: "\f121";
 }
 

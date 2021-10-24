@@ -2,10 +2,10 @@ import Component from "../../../js/Component.js";
 import BlocText from "../landing/BlocText.js";
 import Message from "./Message.js";
 import Quiz from "./Quiz.js";
-import VideoComponet from "./VideoComponet.js";
+import VideoPlayer from "./VideoPlayer.js";
 
 class Main extends Component {
-    setChildComponent() { return [VideoComponet, Quiz, Message]; }
+    setChildComponent() { return [VideoPlayer, Quiz, Message]; }
     template({ }) {
         return `
     <main class="lesson__main">
@@ -17,7 +17,7 @@ class Main extends Component {
             </svg>
             <h1>Title</h1>
         </div>
-        <VideoComponet></VideoComponet>
+        <VideoPlayer></VideoPlayer>
         <Quiz></Quiz>
         <Message></Message>
     </main>`
