@@ -1,0 +1,1149 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprende Javascript</title>
+    <link rel="icon" href="img/favicon.png">
+    <script src="src/index.js" type="module"></script>
+<style id="src-css-">* {
+    box-sizing: border-box;
+}
+
+:root {
+    --brand_primary           : #2b3636;
+    --brand_secondary         : #09A59A;
+    --brand_heading           : #EFEFF5;
+    --brand_text              : #2b3636;
+    --brand_navbar_text       : #fff;
+    --brand_navbar_fixed_text : #fff;
+    --brand_homepage_heading  : #fff;
+    --brand_course_heading    : #fff;
+    --brand_video_player_color: #09A59A;
+    --font_family             : Proxima;
+    --max-width               : 960px;
+    --lesson_aside            : 350px;
+}
+
+
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin     : 0;
+    font-family: var(--font_family);
+    font-size  : 20px;
+    overflow-y: scroll;
+}
+.hide{
+    /* display: none !important; */
+    visibility: hidden !important;
+}
+
+
+@font-face {
+    font-family : 'Proxima';
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-style  : italic;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : 300;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : 600;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : 600;
+    font-style  : italic;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : bold;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : bold;
+    font-style  : italic;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : 900;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+</style><style id="src-components-searcher-">.searcher-ns{
+    display: flex;
+}
+
+
+.searcher-ns .flex{
+    padding-top : 20px;
+    display: flex;
+}
+.searcher-ns .searcher {
+    height          : 30px;
+    padding-left    : 10px;
+    padding-right   : 10px;
+    border-radius   : 5px 0 0 5px;
+    outline         : none;
+    border          : none;
+    background-color: gray;
+    color           : white;
+    cursor          : default;
+    border          : 1px solid rgb(181, 181, 181);
+    border-right    : none;
+}
+
+.searcher-ns .btn-search {
+    background-color: red;
+    height          : 30px;
+    outline         : none;
+    border          : none;
+    background-color: gray;
+    border-radius   : 0 5px 5px 0;
+    border          : 1px solid rgb(181, 181, 181);
+    padding-left    : 10px;
+    padding-right   : 10px;
+    display         : grid;
+    place-items     : center;
+}
+.searcher-ns .btn-search,
+.searcher-ns .searcher {
+    box-shadow: 0 0 0px white;
+    transition: all 0.2s;
+}
+
+.searcher-ns .btn-search:hover,
+.searcher-ns .searcher:hover {
+    box-shadow: 0 0 5px white;
+}
+
+.searcher-ns .btn-search {
+    cursor: pointer;
+}
+
+.searcher-ns .searcher::placeholder {
+    color: #ddd;
+}</style><style id="src-components-landing-css-">header {
+    width           : 100%;
+    background-color: var(--brand_text);
+    position        : fixed;
+    top             : 0;
+    z-index         : 1;
+}
+
+.navbar {
+    max-width: var(--max-width);
+    margin   : auto;
+
+}
+
+.navbar__header {
+    display        : flex;
+    flex-flow      : row;
+    justify-content: space-between;
+    align-items    : center;
+    height         : 60px;
+}
+
+.navbar__header__logolink {
+    height         : 60px;
+    display        : grid;
+    place-items    : center;
+    color          : white;
+    text-decoration: none;
+    font-weight    : bolder;
+    padding        : 0 10px;
+}
+
+.navbar__menu {}
+
+.hamburger {
+    display: none;
+}
+
+.navbar__menu__list {
+    display    : flex;
+    flex-flow  : row;
+    align-items: center;
+    margin     : 0;
+}
+
+.navbar__menu__list li {
+    list-style     : none;
+    position       : relative;
+    padding-left   : 5px;
+    padding-right  : 5px;
+    display        : flex;
+    justify-content: center;
+}
+
+.navbar__menu__list li a {
+    color          : white;
+    text-decoration: none;
+    font-size      : .7rem;
+}
+
+.navbar__menu__list li a:hover {
+    color: aquamarine;
+}
+
+
+.navbar__menu__list .searcher {
+    height          : 30px;
+    padding-left    : 10px;
+    padding-right   : 10px;
+    border-radius   : 5px 0 0 5px;
+    outline         : none;
+    border          : none;
+    background-color: gray;
+    color           : white;
+    cursor          : default;
+    border          : 1px solid rgb(181, 181, 181);
+    border-right    : none;
+}
+
+.navbar__menu__list .btn-search {
+    background-color: red;
+    height          : 30px;
+    outline         : none;
+    border          : none;
+    background-color: gray;
+    border-radius   : 0 5px 5px 0;
+    border          : 1px solid rgb(181, 181, 181);
+    padding-left    : 10px;
+    padding-right   : 10px;
+    display         : grid;
+    place-items     : center;
+}
+
+.navbar__menu__list .btn-search,
+.navbar__menu__list .searcher {
+    box-shadow: 0 0 0px white;
+    transition: all 0.2s;
+}
+
+.navbar__menu__list .btn-search:hover,
+.navbar__menu__list .searcher:hover {
+    box-shadow: 0 0 5px white;
+}
+
+.navbar__menu__list .btn-search {
+    cursor: pointer;
+}
+
+.navbar__menu__list .searcher::placeholder {
+    color: #ddd;
+}
+
+/*gravatar*/
+.menu-trigger {
+    width           : 46px;
+    /* height       :30px; */
+    background-color: rgba(0, 0, 0, 0);
+    border          : none;
+    display         : grid;
+    place-items     : center;
+}
+
+.gravatar {
+    width        : 30px;
+    height       : 30px;
+    border-radius: 50%;
+}
+
+.navbar__current-user {
+    display: none;
+}
+
+
+
+ul.inner-menu {
+    background-color   : #fff;
+    padding            : 0;
+    border-radius      : 5px;
+    position           : absolute;
+    right              : 0px;
+    width              : 200px;
+    border             : 1px solid black;
+    /* display         : none; */
+}
+
+.inner-menu li {
+    height : 36;
+    padding: 8px;
+}
+
+.inner-menu li a,
+.inner-menu li a:hover {
+    color      : var(--brand_text);
+    font-size  : .6em;
+    display    : block;
+    line-height: 20px;
+}
+
+.inner-menu li a:hover {
+    text-decoration-color: var(--brand_text);
+    text-decoration      : underline;
+}
+footer{
+    background-color: var(--brand_text);
+    /* height: 100px; */
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+footer .container_960{
+    width: 960px;
+    margin: auto;
+}
+footer .container_960 ul{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+footer .container_960  ul li{
+    list-style: none;
+    /* font-weight: 100; */
+    font-size: 0.9rem;
+}
+footer .container_960 > ul li >ul{
+    display: flex;
+    flex-flow: column;
+}
+footer .container_960 > ul li >ul a{
+    color: white;
+    text-decoration: none;
+}
+footer .container_960 > ul li >ul a:hover{
+    text-decoration: underline;
+}
+footer .container_960 > ul li >ul li{
+    font-size: .8rem;
+}
+footer .container_960 > ul li >ul li.with{
+    padding-top: 10px;
+}
+footer .container_960 > ul li >ul span{
+    display: block;
+    font-size: .9rem;
+}
+.block__text{
+    width: 100%; 
+    background-color: #c4c4c4;
+    /* margin-top: 50px; */
+}
+.block__text__960{
+    width: 960px;
+    margin: auto;
+}
+.block__text__960__590{
+    width: 590px;
+    margin: auto;
+    text-align: center;
+    color: var(--brand_text);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.block__text__960__590 h2{
+    font-size: 1.2rem;
+}
+.block__text__960__590 p{
+    font-size: .8rem;
+    line-height: 1.3rem;
+}
+.block__pricing{
+    background-color: var(--brand_heading);
+    height: 150px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+.block__pricing__text{
+    font-size: 1.5rem;
+    color: var(--brand_text);
+}
+.block__image-with-text{
+    margin-top: 50px;
+}
+.block__image-with-text__center{
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.block__image-with-text__center.reverse{
+    flex-flow: row-reverse;
+}
+.block__image-with-text__image{
+    /* background-image: url(https://assets.teachablecdn.com/page-block-default-images/image-with-text-1.jpg); */
+    background-image: url(https://programmingtips.net/wp-content/uploads/2019/11/javascript_logo.png);
+    
+    background-size: cover;
+    background-position: center;
+    width: 47%;
+    height: 90vh;
+}
+
+.block__image-with-text__text{
+    width: 50%;
+    min-height: 90vh;
+    text-align: center;
+    color: var(--brand_text);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+}
+.block__image-with-text__text h2{
+    font-size: 1.2rem;
+}
+.block__image-with-text__text p{
+    font-size: .8rem;
+    line-height: 1.3rem;
+}
+.block__featured-products {
+    margin-top      : 50px;
+    background-color: var(--brand_heading);
+    text-align      : center;
+    color           : var(--brand_text);
+    padding-top     : 50px;
+}
+
+.block__featured-products h5 {
+    font-size: 1.5rem;
+    margin   : 0;
+
+}
+
+.block__featured-products>p {
+    font-size: .8rem;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.block__featured-products button{
+    padding            : 5px;
+    /* background-color: var(--brand_secondary);;  */
+    background-color   : #b7f1ea;
+    font-size          : .6rem;
+    font-weight        : bold;
+    border-radius      : 5px;
+    text-transform     : uppercase;
+    border: none;
+}
+.block__featured-products ul{
+    padding: 0;
+    width: 960px;
+    padding-top: 20px;
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+}
+.block__featured-products ul li{
+    list-style: none;
+    width: 100%;
+    margin: 12px;
+    box-shadow: 0 0 20px gray;
+    transition: all 0.2s ease;
+}
+.block__featured-products ul li:hover{
+    box-shadow: 0 0 20px black;
+}
+.block__featured-products ul li .image{
+    min-height: 150px;
+    background-color: rebeccapurple;
+    background-image: url(https://assets.teachablecdn.com/page-block-default-images/featured-products-course-card-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.block__featured-products h6{
+    margin: 0;
+    font-size: .9rem;
+    padding-top: 30px;
+}
+.block__featured-products span{
+    font-size: .8rem;
+}
+
+.block__featured-products .container{
+    min-height: 200px;
+    position: relative;
+    color: var(--brand_secondary); 
+}
+.block__featured-products .bottom{
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: .8rem;
+    color:var(--brand_secondary);
+}
+.block__featured-products .avatar{
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    background-color: gray;  
+    background-image: url(https://fedora.teachablecdn.com/assets/user-0ae68ba67e6ead32c4ff1cc668d501f896bddd5ef1667ac3e9ff29ce601ed653.png);
+    background-size: cover;
+    background-position: center center;
+}
+.block__featured-products .author{
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.block__featured-products > input[type="button"]{
+    padding            : 15px;
+    background-color: var(--brand_secondary); 
+    font-size          : .8rem;
+    font-weight        : bold;
+    border-radius      : 5px;
+    border: none;
+    color: white;
+    margin: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.block__email_leads{
+    width: 100%;
+    text-align: center;
+    padding: 60px;
+}
+.block__email_leads .container_500{
+    width: 500px;
+    margin: auto;
+    color: var(--brand_text);
+}
+.block__email_leads h5{
+    margin: 0;
+    font-size: 1.2em;
+}
+.block__email_leads p{
+    font-size: .8rem;
+}
+
+.block__email_leads label{
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: .9rem;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.block__email_leads input{
+    width: 100%;
+    line-height: 1.2rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.block__email_leads input:hover{
+    border: 1px solid #ccc;
+}
+.block__email_leads input:focus{
+    outline: .5px solid #aaa;
+    box-shadow: none;
+}
+.block__email_leads .checkbox{
+    display: flex;
+    flex-flow: row;
+    align-items: baseline;
+    padding-top: 20px ;
+}
+.block__email_leads .checkbox input{
+    width: fit-content;
+}
+.block__email_leads .checkbox span{
+    width: 100%;
+    font-size: .9rem;
+}
+
+.block__email_leads button{
+    display: block;
+    width: auto;
+    margin: auto;
+    /**/
+    border-radius: 25px;
+    padding: 13px 18px;
+    border: none;
+    background-color: var(--brand_secondary);
+    color: white;
+    line-height: 24px;
+    font-size: .8rem;
+    font-family: var(--font_family);
+    font-weight: 700;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.block__email_leads .container_500 > span{
+    font-size: .6rem;
+    margin: 0;
+}
+.block__curriculum {
+    width        : 100%;
+    /* border-top: 2px solid red; */
+    padding-top  : 50px;
+}
+
+.block__curriculum__710 {
+    width     : 710px;
+    margin    : auto;
+    text-align: center;
+    color     : var(--brand_text);
+}
+
+.block__curriculum__710 h4 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.block__curriculum__710>span {
+    padding            : 5px;
+    /* background-color: var(--brand_secondary);;  */
+    background-color   : #b7f1ea;
+    font-size          : .6rem;
+    font-weight        : bold;
+    border-radius      : 5px;
+    text-transform     : uppercase;
+}
+
+.block__curriculum__710 p {
+    font-size: .8rem;
+}
+
+.block__curriculum__section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.block__curriculum__section h5{
+    width: 100%;
+    background-color: var(--brand_heading);
+    padding: 12px;
+    text-align: left;
+    font-size: .9rem;
+    margin: 0;
+}
+.block__curriculum__section ul{
+    padding: 0;
+    margin: 0;
+}
+.block__curriculum__section ul li{
+    list-style: none;
+    height: 50px;
+    
+    font-size: .8rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: 1px solid white;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+.block__curriculum__section ul li:hover{
+    background-color: #cccccc;
+}
+
+.block__curriculum__section .icon{
+    background-image: url(https://fedora.teachablecdn.com/assets/icons/youtube-brands-43c32617529d416391eed20028644a3045ecdb646146cc146bc8a6250fec979d.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width:18px;
+    height: 18px;
+}
+.block__curriculum__section .description{
+    text-align: left;
+    width: 100%;
+    margin-left: 10px;
+    font-size: .8rem;
+}
+
+.block__curriculum__section .button{
+    padding: 3px;
+    /* background-color: var(--brand_heading); */
+    background-color: rgb(48, 68, 56);
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+}
+
+
+.block__column_container{
+    display: grid;
+    grid-template-columns: repeat(3,  1fr);
+    color: var(--brand_text);
+    text-align: center;
+    max-width: 960px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.block__column_card{
+    padding: 12px;
+}
+
+.block__column_image{
+    background-image: url(https://assets.teachablecdn.com/page-block-default-images/text-with-image-grid-1.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+    width: 100%;
+}
+
+.block__column_image:nth-of-type(1){
+    background-image: url(https://assets.teachablecdn.com/page-block-default-images/text-with-image-grid-2.jpg);
+    cursor: pointer;
+}
+
+h3.block__column_title{
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+p.block__column_p{
+    font-size: .8rem;
+}
+
+.word-cloud {
+    width         : 960px;
+    margin        : auto;
+    padding-top   : 30px;
+    padding-bottom: 30px;
+    overflow-wrap : break-word;
+}
+
+.word-cloud .container {
+    width     : 100%;
+    text-align: center;
+}
+
+.word-cloud .container .word {
+    padding            : 5px 20px;
+    background-color   : var(--brand_secondary);
+    background-color   : var(--brand_primary);
+    text-transform     : capitalize;
+    /* background-color: red; */
+    color              : white;
+    margin             : 5px;
+    display            : inline-block;
+    border-radius      : 5px;
+    font-weight        : bold;
+    text-shadow        : 0 0 3px black;
+    box-shadow         : 0 0 10px grey;
+    cursor             : pointer;
+    transition         : all 0.2s;
+}
+
+.word-cloud .container .word:hover {
+    box-shadow: 0 0 10px yellow;
+    transform : scale(1.1);
+}
+.banner {
+    margin-top            : 60px;
+    /* min-height         : 50vh; */
+    height                : calc(80vh - 60px);
+    height                : 400px;
+    /* height             :calc(80vh - 60px); */
+    /* background-image   : url(https://assets.teachablecdn.com/page-block-default-images/banner.jpg); */
+    /* background-image   : url(https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2dyYW1taW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80); */
+
+    /* background-color: red; */
+    background-size    : cover;
+    background-position: center;
+    display            : flex;
+    align-items        : center;
+    overflow : hidden;
+}
+
+.banner:before {
+    position: absolute;
+    display         : block;
+    content         : "";
+    width           : 100%;
+    /* left            : -10%; */
+    height          : 420px;
+    /* margin-top : -20px; */
+    background-image: url(https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2dyYW1taW5nfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80);
+    background-position: center;
+    background-size: cover;
+    -webkit-filter  : blur(2px);
+    -moz-filter     : blur(2px);
+    -o-filter       : blur(2px);
+    -ms-filter      : blur(2px);
+    filter          : blur(2px);
+    position        : absolute;
+    z-index         : -1;
+}
+
+.banner__inner {
+    width       : 628px;
+    margin-left : auto;
+    margin-right: auto;
+    color       : white;
+    text-align  : center;
+
+}
+
+.banner__inner h1 {
+    font-size  : 2.2rem;
+    line-height: 72px;
+    font-weight: 700;
+    margin     : 0;
+}
+
+.banner__inner p {
+    color         : white;
+    font-size     : .8rem;
+    font-family   : var(--font_family);
+    font-weight   : 700;
+    margin        : 0;
+    display       : block;
+    padding-top   : 20px;
+    padding-bottom: 20px;
+}
+
+.banner__button {
+    border-radius   : 25px;
+    padding         : 13px 18px;
+    border          : none;
+    background-color: var(--brand_secondary);
+    color           : white;
+    line-height     : 24px;
+    font-size       : .8rem;
+    font-family     : var(--font_family);
+    font-weight     : 700;
+    padding-left    : 50px;
+    padding-right   : 50px;
+    margin-top      : 30px;
+    margin-bottom   : 60px;
+    cursor          : pointer;
+    user-select     : none;
+    box-shadow      : 0 0 0 white;
+    transition      : box-shadow 0.2s;
+}
+
+.banner__button:hover {
+    box-shadow: 0 0 10px white;
+}</style></head>
+<body><div click="doSomething"> 
+            <header id="header" class="header header-sticky">
+            <!-- Navbar -->
+            <nav class="navbar is-not-signed-in navbar-course-hero at-top" id="navbar" role="navigation">
+                <div class="navbar__header">
+                    <!-- Site logo -->
+
+                    <a class="navbar__header__logolink" href="javascript:;">
+                        THREE.JS
+                        <!-- <img src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:60/https://file-uploads.teachablecdn.com/2600edf1805047aba6aa2a4c7a30f9f1/4a63254abacb45f3b284a47af8b71257"
+                            alt="Alva Majo's School"
+                            srcset="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:120/https://file-uploads.teachablecdn.com/2600edf1805047aba6aa2a4c7a30f9f1/4a63254abacb45f3b284a47af8b71257 2x"> -->
+                    </a>
+
+                    <!-- Header Menu -->
+                    <div class="navbar__menu">
+                        <button for="f-toggle" tabindex="0" role="button" id="hamburger" class="hamburger" aria-label="Toggle navigation" onclick="toggleMenu('hamburger-menu')">
+                            <span></span>
+                        </button>
+                        <ul class="navbar__menu__list menu" id="hamburger-menu" role="menu" aria-describedby="hamburger" tabindex="0" aria-hidden="false">
+        <li>
+           <div class="auth"></div>
+        </li>
+        <!-- <li>
+            <a href="javascript:;" target="" click="courses">
+                Ver todos los cursos
+            </a>
+        </li> -->
+        <li>
+            <!-- <input type="text" placeholder="Buscar curso" class="searcher">
+            <button class="btn-search">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 50 50"  style=" fill:#ffffff;">
+                    <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
+                </svg>
+            </button> -->
+            <div class="searcher-ns">
+        <input type="text" placeholder="Buscar video o curso" class="searcher">
+        <button class="btn-search">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 50 50" style=" fill:#ffffff;">
+                <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
+            </svg>
+        </button>
+    </div>
+        </li>
+        <!-- <li>
+            <a href="/courses/enrolled" target="">
+                My Products
+            </a>
+        </li> -->
+       
+
+
+        <!-- If more than 5 links, collapse the rest in a dropdown -->
+
+
+        <!-- User Menu -->
+        <li style="display: none;">
+            <button class="menu-trigger" click="doSomething">
+                <img class="gravatar" src="https://s.gravatar.com/avatar/9190e124a88d67ac95f930daa72a72ba?d=mm" alt="tujuegoajuicio@gmail.com">
+                <span class="navbar__current-user">Alva Majo<i class="caret"></i></span>
+            </button>
+            <ul id="user-menu" class="inner-menu menu hidden hide" tabindex="0" aria-hidden="true">
+
+                <li class="user-profile">
+                    <a href="/current_user/profile">
+                        Edit Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="/current_user/subscriptions">
+                        Manage Subscriptions
+                    </a>
+                </li>
+                <li>
+                    <a href="/current_user/credit_card">
+                        Add / Change Credit Card
+                    </a>
+                </li>
+                <li>
+                    <a href="/current_user/address">
+                        Address
+                    </a>
+                </li>
+                <li>
+                    <a href="/current_user/contact">
+                        Contact
+                    </a>
+                </li>
+                <li class="user-signout">
+                    <a href="/sign_out">
+                        Log Out
+                    </a>
+                </li>
+            </ul>
+
+        </li>
+
+    </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+            <main>
+            <section class="banner">
+            <div class="banner__inner">
+                <h1>Aprende Javascript</h1>
+                <p>Cursos gratuitos garantizados</p>
+                <button class="banner__button" click="doSomething">Comienza ahora</button> 
+            </div>
+        </section>
+            <section class="word-cloud">
+            <div class="container">
+                <span class="word" click="search">javascript</span><span class="word" click="search">html</span><span class="word" click="search">css</span><span class="word" click="search">array</span><span class="word" click="search">arrow</span><span class="word" click="search">flex</span><span class="word" click="search">grid</span><span class="word" click="search">module</span><span class="word" click="search">es6</span><span class="word" click="search">callback</span><span class="word" click="search">event</span><span class="word" click="search">json</span><span class="word" click="search">react</span><span class="word" click="search">vue</span><span class="word" click="search">angular</span><span class="word" click="search">variable</span><span class="word" click="search">fetch</span>
+            </div>
+        </section>
+            <!-- <BookImage></BookImage> -->
+            <section class="block__text">
+        <div class="block__text__960">
+            <div class="block__text__960__590">
+                <h2>La comunidad</h2>
+                <p>Que JavaScript sea uno de los lenguajes de programación más extendidos, tiene una ventaja que cabe destacar, y es que cuenta con una gran comunidad detrás. Esto significa que se puede encontrar con facilidad documentación, herramientas complementarias, frameworks y una gran variedad de recursos.</p>               
+            <div>
+        <div>
+    </div></div></div></div></section>
+            <section class="block__curriculum">
+        <div class="block__curriculum__710">
+            <h4>Listas de reproducción </h4>
+            <p>En este sitio encontrarás una amplia gama de listas de reproducción para aprender todo lo que necesitas para aprender de una manera cómoda.</p>
+            <!-- <span>Example</span> -->
+            <div class="block__curriculum__section">
+                <h5>Listas de reproducción disponibles</h5>
+                <ul>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso de JavaScript - Nivel 1</span>
+                        <span class="button" click="goToList" data-list="PLAo4pr-Oiqfzi3-L5rzhPcGdeGcWwQ0ss">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso Cómo crear una página web</span>
+                        <span class="button" click="goToList" data-list="PLQCgNGUqLK4nApelmHAFDdwir3QubTqio">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso de javaScript</span>
+                        <span class="button" click="goToList" data-list="PLpOqH6AE0tNhQ3KW1DPc18xZfLfjX5Xuz">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso de JavaScript desde 0</span>
+                        <span class="button" click="goToList" data-list="PLU8oAlHdN5BmpobVmj1IlneKlVLJ84TID">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso JavaScript</span>
+                        <span class="button" click="goToList" data-list="PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso de Webgl y THREE JS</span>
+                        <span class="button" click="goToList" data-list="PLSuKjujFoGJ0FpNFTJvvd2CN_E0Bdo0KI">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">🍀CURSO de MONGODB🍃 Para Principiantes🍀</span>
+                        <span class="button" click="goToList" data-list="PLXXiznRYETLcJE_4U9qN2pysZOSYyL4Mh">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">👉 Curso MongoDB español 2021 curso</span>
+                        <span class="button" click="goToList" data-list="PL_WGMLcL4jzVcLaDLWIq2eoo4WoICgSaJ">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Javascript basico</span>
+                        <span class="button" click="goToList" data-list="PLA505F7842858BD06">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">✅ Curso básico HTML 5 desde Cero</span>
+                        <span class="button" click="goToList" data-list="PL8enlRskAhbKfORi364S8bNEICUm-eicz">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">CSS GRID CURSO</span>
+                        <span class="button" click="goToList" data-list="PLP7LlHfxfuM-_7VDcD7NdhrqDTVb58iID">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso de REACT desde Cero 2020</span>
+                        <span class="button" click="goToList" data-list="PLROIqh_5RZeDk04YvFLZfHuTuA4q5OOI5">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Aprendiendo TypeScript</span>
+                        <span class="button" click="goToList" data-list="PLRBma32phT7i38bZNS89sPvLIs4IqgDNu">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Angular [Curso Español con Firebase] Desde cero</span>
+                        <span class="button" click="goToList" data-list="PLPl81lqbj-4JaLibWSbTVrYTyHDadppKq">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso React.js</span>
+                        <span class="button" click="goToList" data-list="PLvq-jIkSeTUZ5XcUw8fJPTBKEHEKPMTKk">Start</span>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+            <section class="block__pricing"> 
+            <div class="block__pricing__text">Aprende comodamente</div>
+        </section>
+            <section class="block__column"> 
+                <div class="block__column_container">
+                    <div class="block__column_card">
+                        <div class="block__column_image" style="background-image: url(img/angular.png)"></div>
+                        <h3 class="block__column_title" click="gotoList">Angular</h3>
+                        <p class="block__column_p">Aprenda una forma de crear aplicaciones con Angular y reutilice su código y sus habilidades para crear aplicaciones para cualquier objetivo de implementación. Para web, web móvil, móvil nativo y escritorio nativo.</p>
+                    </div>
+                    <div class="block__column_card">
+                        <div class="block__column_image" style="background-image: url(img/react.png)"></div>
+                        <h3 class="block__column_title" click="gotoList">React</h3>
+                        <p class="block__column_p">React ha sido diseñado desde el principio para una adopción gradual, y puede usar tanto React como necesite. Ya sea que desee probar React, agregar algo de interactividad a una página HTML simple o iniciar una aplicación compleja con tecnología React.</p>
+                    </div>
+                    <div class="block__column_card">
+                        <div class="block__column_image" style="background-image: url(img/vue.png)"></div>
+                        <h3 class="block__column_title" click="gotoList">Vue</h3>
+                        <p class="block__column_p">Vue está diseñado desde cero para ser utilizado incrementalmente. La librería central está enfocada solo en la capa de visualización, y es fácil de utilizar e integrar con otras librerías o proyectos existentes.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- <BlockFeatured></BlockFeatured> -->
+            <!-- <BookImage reverse="reverse"></BookImage> -->
+            
+            <!-- <BlockEmail></BlockEmail> -->
+        </main>
+            <footer class="footer">
+        <div class="container_960">
+            <ul>
+                <li>© Alva Majo's School 2021</li>
+                <li>
+                    <ul>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li class="with">Teach Online with <span>Teach:able</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+            </div></body></html>

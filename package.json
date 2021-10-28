@@ -1,0 +1,18 @@
+{
+  "name": "ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./server/index.js"
+  },
+  "keywords": [],
+  "author": "Samu Garron <samugarrondev@gmail.com> (https://www.youtube.com/channel/UCvZ-Ssn7OLkSCbfc1xRAnTw)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14",
+    "puppeteer": "^10.4.0"
+  }
+}

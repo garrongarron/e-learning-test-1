@@ -1,0 +1,71 @@
+.lesson__header {
+    background-color: var(--brand_primary);
+    height          : 60px;
+    color           : white;
+    position        : fixed;
+    z-index         : 1;
+    width           : 100%;
+    top             : 0;
+}
+
+.lesson__header nav {
+    display        : flex;
+    flex-flow      : row;
+    justify-content: space-between;
+}
+
+.lesson__header .left {
+    display        : flex;
+    flex-flow      : row;
+    justify-content: space-between;
+    align-items    : center;
+    width          : var(--lesson_aside);
+    height         : 60px;
+    /* padding-left: 30px; */
+    padding-right  : 30px;
+    border-right   : 1px solid white;
+    /* color       : red; */
+    padding-left   : 20px;
+    padding-right  : 20px;
+}
+
+.lesson__header .left .home {
+    user-select: none;
+    cursor     : pointer;
+}
+
+.lesson__header .left .settings {
+    /* display: none; */
+}
+
+.lesson__header .right {
+    display        : flex;
+    flex-flow      : row;
+    justify-content: flex-end;
+    align-items    : center;
+    padding-left   : 20px;
+    padding-right  : 20px;
+}
+
+.lesson__header .right div {
+    line-height  : 24px;
+    padding      : 5px 20px;
+    border-radius: 5px;
+    margin-left  : 10px;
+    border       : 1px solid #ccc;
+    font-size    : .8rem;
+    display      : flex;
+    flex-flow    : row;
+    cursor       : pointer;
+    box-shadow   : 0 0 0px white;
+    transition   : box-shadow 0.2s;
+    user-select  : none;
+}
+
+.lesson__header .right div:hover {
+    box-shadow: 0 0 10px white;
+}
+
+.lesson__header .right div.next__lesson {
+    background-color: var(--brand_secondary);
+}

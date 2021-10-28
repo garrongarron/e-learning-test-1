@@ -1,0 +1,162 @@
+header {
+    width           : 100%;
+    background-color: var(--brand_text);
+    position        : fixed;
+    top             : 0;
+    z-index         : 1;
+}
+
+.navbar {
+    max-width: var(--max-width);
+    margin   : auto;
+
+}
+
+.navbar__header {
+    display        : flex;
+    flex-flow      : row;
+    justify-content: space-between;
+    align-items    : center;
+    height         : 60px;
+}
+
+.navbar__header__logolink {
+    height         : 60px;
+    display        : grid;
+    place-items    : center;
+    color          : white;
+    text-decoration: none;
+    font-weight    : bolder;
+    padding        : 0 10px;
+}
+
+.navbar__menu {}
+
+.hamburger {
+    display: none;
+}
+
+.navbar__menu__list {
+    display    : flex;
+    flex-flow  : row;
+    align-items: center;
+    margin     : 0;
+}
+
+.navbar__menu__list li {
+    list-style     : none;
+    position       : relative;
+    padding-left   : 5px;
+    padding-right  : 5px;
+    display        : flex;
+    justify-content: center;
+}
+
+.navbar__menu__list li a {
+    color          : white;
+    text-decoration: none;
+    font-size      : .7rem;
+}
+
+.navbar__menu__list li a:hover {
+    color: aquamarine;
+}
+
+
+.navbar__menu__list .searcher {
+    height          : 30px;
+    padding-left    : 10px;
+    padding-right   : 10px;
+    border-radius   : 5px 0 0 5px;
+    outline         : none;
+    border          : none;
+    background-color: gray;
+    color           : white;
+    cursor          : default;
+    border          : 1px solid rgb(181, 181, 181);
+    border-right    : none;
+}
+
+.navbar__menu__list .btn-search {
+    background-color: red;
+    height          : 30px;
+    outline         : none;
+    border          : none;
+    background-color: gray;
+    border-radius   : 0 5px 5px 0;
+    border          : 1px solid rgb(181, 181, 181);
+    padding-left    : 10px;
+    padding-right   : 10px;
+    display         : grid;
+    place-items     : center;
+}
+
+.navbar__menu__list .btn-search,
+.navbar__menu__list .searcher {
+    box-shadow: 0 0 0px white;
+    transition: all 0.2s;
+}
+
+.navbar__menu__list .btn-search:hover,
+.navbar__menu__list .searcher:hover {
+    box-shadow: 0 0 5px white;
+}
+
+.navbar__menu__list .btn-search {
+    cursor: pointer;
+}
+
+.navbar__menu__list .searcher::placeholder {
+    color: #ddd;
+}
+
+/*gravatar*/
+.menu-trigger {
+    width           : 46px;
+    /* height       :30px; */
+    background-color: rgba(0, 0, 0, 0);
+    border          : none;
+    display         : grid;
+    place-items     : center;
+}
+
+.gravatar {
+    width        : 30px;
+    height       : 30px;
+    border-radius: 50%;
+}
+
+.navbar__current-user {
+    display: none;
+}
+
+
+
+ul.inner-menu {
+    background-color   : #fff;
+    padding            : 0;
+    border-radius      : 5px;
+    position           : absolute;
+    right              : 0px;
+    width              : 200px;
+    border             : 1px solid black;
+    /* display         : none; */
+}
+
+.inner-menu li {
+    height : 36;
+    padding: 8px;
+}
+
+.inner-menu li a,
+.inner-menu li a:hover {
+    color      : var(--brand_text);
+    font-size  : .6em;
+    display    : block;
+    line-height: 20px;
+}
+
+.inner-menu li a:hover {
+    text-decoration-color: var(--brand_text);
+    text-decoration      : underline;
+}

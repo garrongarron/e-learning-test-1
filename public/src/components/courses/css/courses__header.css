@@ -1,0 +1,36 @@
+.search__header nav{
+    width: 100%;
+    background-color: var(--brand_text);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+.search__header .search-bar{
+    display: flex;
+    justify-content: space-around;
+    align-items    : center;
+    height         : 60px;
+}
+.search__header .navbar__header__logolink {
+    display        : grid;
+    place-items    : center;
+    color          : white;
+    text-decoration: none;
+    font-weight    : bolder;
+    padding        : 0 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* SEARCH MAIN*/
+.searcher-main *{
+    margin: 0;
+    padding: 0;
+}
+.searcher-main {
+    margin-top :60px;
+}
+.searcher-main .container {
+    width :1140px;
+    margin: auto;
+}

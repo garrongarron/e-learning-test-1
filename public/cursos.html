@@ -1,0 +1,301 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+    <link rel="icon" href="img/favicon.png">
+    <script src="src/index.js" type="module"></script>
+<style id="src-css-">* {
+    box-sizing: border-box;
+}
+
+:root {
+    --brand_primary           : #2b3636;
+    --brand_secondary         : #09A59A;
+    --brand_heading           : #EFEFF5;
+    --brand_text              : #2b3636;
+    --brand_navbar_text       : #fff;
+    --brand_navbar_fixed_text : #fff;
+    --brand_homepage_heading  : #fff;
+    --brand_course_heading    : #fff;
+    --brand_video_player_color: #09A59A;
+    --font_family             : Proxima;
+    --max-width               : 960px;
+    --lesson_aside            : 350px;
+}
+
+
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin     : 0;
+    font-family: var(--font_family);
+    font-size  : 20px;
+    overflow-y: scroll;
+}
+.hide{
+    /* display: none !important; */
+    visibility: hidden !important;
+}
+
+
+@font-face {
+    font-family : 'Proxima';
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regular-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-style  : italic;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-regitalic-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : 300;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-light-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : 600;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibold-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : 600;
+    font-style  : italic;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-semibolditalic-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : bold;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-bold-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : bold;
+    font-style  : italic;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-boldit-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+
+@font-face {
+    font-family : 'Proxima';
+    font-weight : 900;
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.eot?1307578394");
+    src         : url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.eot?iefix") format("eot"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.woff?1307578394") format("woff"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.ttf?1307578394") format("truetype"), url("//assets.teachablecdn.com/fonts/proxima-nova/proximanova-extrabold-webfont.svg#webfont2rpW2ohz") format("svg");
+    font-display: swap;
+}
+</style><style id="src-components-searcher-">.searcher-ns{
+    display: flex;
+}
+
+
+.searcher-ns .flex{
+    padding-top : 20px;
+    display: flex;
+}
+.searcher-ns .searcher {
+    height          : 30px;
+    padding-left    : 10px;
+    padding-right   : 10px;
+    border-radius   : 5px 0 0 5px;
+    outline         : none;
+    border          : none;
+    background-color: gray;
+    color           : white;
+    cursor          : default;
+    border          : 1px solid rgb(181, 181, 181);
+    border-right    : none;
+}
+
+.searcher-ns .btn-search {
+    background-color: red;
+    height          : 30px;
+    outline         : none;
+    border          : none;
+    background-color: gray;
+    border-radius   : 0 5px 5px 0;
+    border          : 1px solid rgb(181, 181, 181);
+    padding-left    : 10px;
+    padding-right   : 10px;
+    display         : grid;
+    place-items     : center;
+}
+.searcher-ns .btn-search,
+.searcher-ns .searcher {
+    box-shadow: 0 0 0px white;
+    transition: all 0.2s;
+}
+
+.searcher-ns .btn-search:hover,
+.searcher-ns .searcher:hover {
+    box-shadow: 0 0 5px white;
+}
+
+.searcher-ns .btn-search {
+    cursor: pointer;
+}
+
+.searcher-ns .searcher::placeholder {
+    color: #ddd;
+}</style><style id="src-components-courses-css-">.searcher-main h2 {
+    font-size: .8rem;
+}
+
+
+
+
+.searcher-main .results {
+    row-gap              : 10px;
+    display              : grid;
+    grid-column-gap      : 1em;
+    grid-template-columns: repeat(6, 1fr);
+    width                : 100%;
+    padding-top          : 20px
+}
+
+.searcher-main .card {
+    width  : 100%;
+    display: contents;
+}
+
+.searcher-main .card-list {
+    display         : grid;
+    place-items     : center;
+    background-color: #333;
+    background-image: radial-gradient(gray, #2b3636);
+    color           : #fff;
+    text-align      : center;
+    cursor          : pointer;
+
+
+}
+
+.searcher-main .card-list h2 {
+    display  : block;
+    font-size: 1rem;
+
+}
+
+.searcher-main .card-img {
+    width   : 100% !important;
+    aspect-ratio: 16/9;
+    /* background-image: linear-gradient(gray, black); */
+    position: relative;
+    cursor : pointer;
+}
+
+.searcher-main .card-img img {
+    top       : 0;
+    left      : 0;
+    position  : absolute;
+    max-height: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.searcher-main .img-opacity1{
+    opacity: 1 !important;
+}
+
+
+
+.searcher-main img {
+    width  : 100% !important;
+    display: block;
+    
+}
+
+.searcher-main .card-info {
+    padding   : 5px;
+    overflow-y: hidden;
+}
+.search__header nav{
+    width: 100%;
+    background-color: var(--brand_text);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+.search__header .search-bar{
+    display: flex;
+    justify-content: space-around;
+    align-items    : center;
+    height         : 60px;
+}
+.search__header .navbar__header__logolink {
+    display        : grid;
+    place-items    : center;
+    color          : white;
+    text-decoration: none;
+    font-weight    : bolder;
+    padding        : 0 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* SEARCH MAIN*/
+.searcher-main *{
+    margin: 0;
+    padding: 0;
+}
+.searcher-main {
+    margin-top :60px;
+}
+.searcher-main .container {
+    width :1140px;
+    margin: auto;
+}</style></head>
+<body><div click="doSomething"> 
+        <header class="search__header">
+        <nav>
+            <div class="search-bar">
+
+                <div class="navbar__header__logolink" click="home">
+                    THREE.JS        
+                        <!-- <img src="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:60/https://file-uploads.teachablecdn.com/2600edf1805047aba6aa2a4c7a30f9f1/4a63254abacb45f3b284a47af8b71257"
+                            alt="Alva Majo's School"
+                            srcset="https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=height:120/https://file-uploads.teachablecdn.com/2600edf1805047aba6aa2a4c7a30f9f1/4a63254abacb45f3b284a47af8b71257 2x"> -->
+                            
+                </div>
+                <div class="searcher-ns">
+        <input type="text" placeholder="Buscar video o curso" class="searcher">
+        <button class="btn-search">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0 0 50 50" style=" fill:#ffffff;">
+                <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
+            </svg>
+        </button>
+    </div>
+            </div>
+        </nav>
+    </header>
+        <main class="searcher-main"> 
+            <div class="container">
+                <div class="results">
+        
+    </div>
+            </div>
+        </main>
+        <!-- <Footer></Footer> -->
+        </div></body></html>
