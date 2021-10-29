@@ -5,6 +5,19 @@
     <title>Courses</title>
     <link rel="icon" href="img/favicon.png">
     <script src="src/index.js" type="module"></script>
+    <script>
+        let addBase = (host) => {
+            let base = document.head.querySelector('base')
+            base = (!base) ? document.createElement('base') : base
+            base.href = host
+            document.head.appendChild(base)
+        }
+        if (location.origin == 'https://garrongarron.github.io') {
+            addBase('https://garrongarron.github.io/e-learning-test-1/')
+        } else {
+            addBase(location.origin)
+        }
+    </script>
 <style id="src-css-">* {
     box-sizing: border-box;
 }
@@ -877,6 +890,7 @@ video{
 .video-controller .minimizefullscreen:before {
     content: "\f109";
 }</style></head>
+
 <body><div>
             <header class="lesson__header">
         <nav>
@@ -940,7 +954,7 @@ video{
         </div>
         <div class="lesson__video__container">
             <div class="lesson__videoplayer" style="position: relative; transition: none 0s ease 0s;">
-      <video preload="auto" style="display: none;" src="https://r4---sn-q0c7rn76.googlevideo.com/videoplayback?expire=1635490695&amp;ei=J0d7Yd7mKsPmWfC8jegD&amp;ip=63.33.216.108&amp;id=o-ALWpoWNMVsHswxVoxMbfSv9ADV6PRuc19LD9hkc742_J&amp;itag=18&amp;source=youtube&amp;requiressl=yes&amp;mh=bv&amp;mm=31%2C26&amp;mn=sn-q0c7rn76%2Csn-aigzrney&amp;ms=au%2Conr&amp;mv=m&amp;mvi=4&amp;pl=18&amp;initcwndbps=465000&amp;vprv=1&amp;mime=video%2Fmp4&amp;ns=qZqb6_k57z12yQY0A5eRgqIG&amp;gir=yes&amp;clen=19411607&amp;ratebypass=yes&amp;dur=528.021&amp;lmt=1528148674544900&amp;mt=1635468544&amp;fvip=6&amp;fexp=24001373%2C24007246&amp;c=WEB_EMBEDDED_PLAYER&amp;n=Un8FI2QYBedIbQtZshr&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&amp;sig=AOq0QJ8wRgIhAOEoBUhdA5fSGoWCmWPhcPX2eDdcEWrT85dOvWTWHWdFAiEAvweY5hmq4MNh5pNKBOJPZ9OOIUyx1e2nD9EySRBrewc%3D&amp;lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&amp;lsig=AG3C_xAwRQIgMoonwbzlCA01FAagQtNofbuWe1Yk-_9Mp1u9m15AgG4CIQD9PoqzkAMoKnz5tZsECUbnw7W0fTgNbt5xI3ruq5Wdow%3D%3D">
+      <video preload="auto" style="display: none;" src="https://r4---sn-q0c7rn76.googlevideo.com/videoplayback?expire=1635491294&amp;ei=fkl7Ye3jH9aBxN8PuZeH2Ak&amp;ip=63.33.216.108&amp;id=o-AB0q9WWZd5nhtS4yTQSVP86kMe2D6K5rVdojRNzAjPiw&amp;itag=18&amp;source=youtube&amp;requiressl=yes&amp;mh=bv&amp;mm=31%2C26&amp;mn=sn-q0c7rn76%2Csn-aigzrney&amp;ms=au%2Conr&amp;mv=m&amp;mvi=4&amp;pl=18&amp;initcwndbps=306250&amp;vprv=1&amp;mime=video%2Fmp4&amp;ns=VVZIENqwwHrTdXZQEIFSuzwG&amp;gir=yes&amp;clen=19411607&amp;ratebypass=yes&amp;dur=528.021&amp;lmt=1528148674544900&amp;mt=1635469024&amp;fvip=6&amp;fexp=24001373%2C24007246&amp;c=WEB_EMBEDDED_PLAYER&amp;n=QqgnjVeTk4AdUjNbIXX&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&amp;sig=AOq0QJ8wRQIgKLAzKWQZNOFQoUg0Ttqf99a3EQSUriaIjlGAuSUn6isCIQC0-V8K5WEq_loxAZ4dr2DvbcJMudGAcarqb8EE547GeA%3D%3D&amp;lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&amp;lsig=AG3C_xAwRQIgN6G4pTTJyRIqB0aLLY2U8YZM0cWNBquwuexo1lOd1yYCIQDXFDQGyhPZD4iKzcnfB1ZvRFS2u6LlYX5aK36KaNdmHA%3D%3D">
         <source type="video/mp4">
       </video>
       <div class="video-controller fadeIn">

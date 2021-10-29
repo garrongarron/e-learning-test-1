@@ -5,6 +5,19 @@
     <title>Aprende Javascript</title>
     <link rel="icon" href="img/favicon.png">
     <script src="src/index.js" type="module"></script>
+    <script>
+        let addBase = (host) => {
+            let base = document.head.querySelector('base')
+            base = (!base) ? document.createElement('base') : base
+            base.href = host
+            document.head.appendChild(base)
+        }
+        if (location.origin == 'https://garrongarron.github.io') {
+            addBase('https://garrongarron.github.io/e-learning-test-1/')
+        } else {
+            addBase(location.origin)
+        }
+    </script>
 <style id="src-css-">* {
     box-sizing: border-box;
 }
@@ -877,6 +890,7 @@ p.block__column_p{
 .banner__button:hover {
     box-shadow: 0 0 10px white;
 }</style></head>
+
 <body><div click="doSomething"> 
             <header id="header" class="header header-sticky">
             <!-- Navbar -->
@@ -1013,62 +1027,74 @@ p.block__column_p{
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">React y Firebase: El Curso Completo, Práctico y desde Cero</span>
-                        <span class="button" click="goToList" data-list="PLhSj3UTs2_yWPYFQKnJm757uPX1k5LLXn">Start</span>
+                        <span class="description">Curso NodeJS</span>
+                        <span class="button" click="goToList" data-list="PLpOqH6AE0tNjx0SzNvlsP9-JGJ0zmuFnS">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">Curso de JavaScript - Nivel 2</span>
-                        <span class="button" click="goToList" data-list="PLAo4pr-OiqfyDNiDnCMFfuNnJc2LmIMUb">Start</span>
+                        <span class="description">✅ Curso básico HTML 5 desde Cero</span>
+                        <span class="button" click="goToList" data-list="PL8enlRskAhbKfORi364S8bNEICUm-eicz">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">🍀CURSO de MONGODB🍃 Para Principiantes🍀</span>
-                        <span class="button" click="goToList" data-list="PLXXiznRYETLcJE_4U9qN2pysZOSYyL4Mh">Start</span>
+                        <span class="description">JavaScript Avanzado : Operaciones con Arreglos (Array operations)</span>
+                        <span class="button" click="goToList" data-list="PL7rZxwCXrAezdblj8xIKL5JqFmTUEkZSp">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">CSS GRID CURSO</span>
-                        <span class="button" click="goToList" data-list="PLP7LlHfxfuM-_7VDcD7NdhrqDTVb58iID">Start</span>
+                        <span class="description">Curso de ECMASCRIPT 6 (ES6)</span>
+                        <span class="button" click="goToList" data-list="PLhSj3UTs2_yX_ct0OfHrmMwKL8wpz-N2j">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">CURSO CSS 2021 para Principiantes</span>
-                        <span class="button" click="goToList" data-list="PLg9145ptuAijV9Uz7kJO2IZ7FCBDaKnpv">Start</span>
+                        <span class="description">Curso de JavaScript - Nivel 1</span>
+                        <span class="button" click="goToList" data-list="PLAo4pr-Oiqfzi3-L5rzhPcGdeGcWwQ0ss">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">Node.js curso desde cero para principiantes  +40 videos</span>
-                        <span class="button" click="goToList" data-list="PLvRPaExkZHFn_EGzNOXsWqtAAGl8ZCbUo">Start</span>
+                        <span class="description">Tutoriales HTML5 y CSS3</span>
+                        <span class="button" click="goToList" data-list="PL4qycS8CTHjtzTAkcZ_ZBO0LmylWBmIMo">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">Curso Flexbox CSS</span>
-                        <span class="button" click="goToList" data-list="PLvq-jIkSeTUbQc3dGsssp8lxAi5npMrys">Start</span>
+                        <span class="description">Curso Básico de Javascript desde 0</span>
+                        <span class="button" click="goToList" data-list="PLhSj3UTs2_yVC0iaCGf16glrrfXuiSd0G">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">Curso de CSS GRID</span>
-                        <span class="button" click="goToList" data-list="PLhSj3UTs2_yWsFd43wpLog5HUFzDgIbWj">Start</span>
+                        <span class="description">Javascript  ¡desde cero! Aprende Frontend JS y Backend JS [FullStack]</span>
+                        <span class="button" click="goToList" data-list="PLPl81lqbj-4LKJ1Vx3EySRht6f9xzolZf">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">🔵 Aprende (Socket.io) desde CERO creando un juego de dibujar en tiempo real curso</span>
-                        <span class="button" click="goToList" data-list="PL_WGMLcL4jzVFpvsWmaPd4SMqZDoahlG_">Start</span>
+                        <span class="description">Curso de Javascript</span>
+                        <span class="button" click="goToList" data-list="PLIcuwIrm4rKce01xBiyw_LOT6waRH5bG0">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">CSS Grid Layout | Curso completo</span>
-                        <span class="button" click="goToList" data-list="PLpfKv2Mn_c-El6EG2Eq6HLdDq7QBz7o6w">Start</span>
+                        <span class="description">CURSO DE 🤓HTML y CSS 2020🚀- [Desde Cero a Profesional] - Master en Desarrollo Web</span>
+                        <span class="button" click="goToList" data-list="PLAo4pr-OiqfwldTxTsbYaF-ucGdDFt6uc">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso Cómo crear una página web</span>
+                        <span class="button" click="goToList" data-list="PLQCgNGUqLK4nApelmHAFDdwir3QubTqio">Start</span>
+                    </li>
+                    
+                    <li>
+                        <span class="icon"></span>
+                        <span class="description">Curso de JavaScript desde 0</span>
+                        <span class="button" click="goToList" data-list="PLU8oAlHdN5BmpobVmj1IlneKlVLJ84TID">Start</span>
                     </li>
                     
                     <li>
@@ -1079,26 +1105,14 @@ p.block__column_p{
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">✔️ Angular 10 - Curso completo - Tutorial ✔️</span>
-                        <span class="button" click="goToList" data-list="PLezsbUDiwcpmhNiMzVPYJXV0Rqn71G4PU">Start</span>
+                        <span class="description">Tutoriales Javascript ES6</span>
+                        <span class="button" click="goToList" data-list="PLvRPaExkZHFkoCzXjHaFy6wWoNTHb_I9b">Start</span>
                     </li>
                     
                     <li>
                         <span class="icon"></span>
-                        <span class="description">Curso JavaScript Moderno</span>
-                        <span class="button" click="goToList" data-list="PLGfh-NC9-wCc2RKe-ccfLR0lq4s_7PAbx">Start</span>
-                    </li>
-                    
-                    <li>
-                        <span class="icon"></span>
-                        <span class="description">Curso Grid CSS</span>
-                        <span class="button" click="goToList" data-list="PLvq-jIkSeTUY628cyd9LVbXSXi2xG9mUl">Start</span>
-                    </li>
-                    
-                    <li>
-                        <span class="icon"></span>
-                        <span class="description">Three.js</span>
-                        <span class="button" click="goToList" data-list="PLEtcGQaT56cgMnOOaRghaZTZyQYuphtje">Start</span>
+                        <span class="description">Curso de Javascript (Desarrollo web en entorno cliente)</span>
+                        <span class="button" click="goToList" data-list="PLI7nHlOIIPOJtTDs1HVJABswW-xJcA7_o">Start</span>
                     </li>
                     
                 </ul>

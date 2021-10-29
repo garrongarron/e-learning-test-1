@@ -5,6 +5,19 @@
     <title>Cursos</title>
     <link rel="icon" href="img/favicon.png">
     <script src="src/index.js" type="module"></script>
+    <script>
+        let addBase = (host) => {
+            let base = document.head.querySelector('base')
+            base = (!base) ? document.createElement('base') : base
+            base.href = host
+            document.head.appendChild(base)
+        }
+        if (location.origin == 'https://garrongarron.github.io') {
+            addBase('https://garrongarron.github.io/e-learning-test-1/')
+        } else {
+            addBase(location.origin)
+        }
+    </script>
 <style id="src-css-">* {
     box-sizing: border-box;
 }
@@ -267,6 +280,7 @@ body {
     width :1140px;
     margin: auto;
 }</style></head>
+
 <body><div click="doSomething"> 
         <header class="search__header">
         <nav>
