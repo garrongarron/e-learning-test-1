@@ -7,6 +7,8 @@ const scrapper = require('./Scrapper');
 var fs = require('fs');
 
 
+const hostTarget = 'https://garrongarron.github.io/e-learning-test-1/'
+const localhost = 'http://localhost:3000/'
 
 app.use(express.static(public))
 let pagasGenerationInProcess = {}
@@ -16,7 +18,8 @@ app.use((req, res, next) => {
         if(!pagasGenerationInProcess[originalUrl]){
             pagasGenerationInProcess[originalUrl] = true
             scrapper(originalUrl).then(data => {
-                fs.writeFile(public+'/' + originalUrl, '<!DOCTYPE html>'+data.html, function (err) {
+                let html = data.html.replace(localhost,hostTarget)
+                fs.writeFile(public+'/' + originalUrl, '<!DOCTYPE html>'+html, function (err) {
                     if (err) throw err;
                     console.log('File is created successfully.');
                 });
