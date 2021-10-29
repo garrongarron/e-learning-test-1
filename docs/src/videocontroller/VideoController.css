@@ -69,7 +69,11 @@ video{
 }
 
 .video-controller .volume-bar {
-    max-width: 40px;
+    max-width: 80px;
+    height: 30px;
+}
+.video-controller .volume-bar .bar{
+    width: 90%;
 }
 .timeline-bar{
     height: 30px;

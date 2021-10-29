@@ -18,13 +18,19 @@ class VideoPlayerBehaviour {
                 threshold: [0.7]
             }
         );
-        if(!this.controller.parentNode.parentNode) return
+        if (!this.controller.parentNode.parentNode) return
         watchMe.observe(this.controller.parentNode.parentNode);
+    }
+    toggle = () => {
+        (!this.video.paused) ? this.video.pause() : this.video.play();
     }
     start(controller) {
         this.controller = controller;
         this.controllerFadeInSystem()
         this.video = document.querySelector('video')
+        this.video.removeEventListener('click', this.toggle)
+        this.video.addEventListener('click', this.toggle)
+        
         //play pause
         this.playToggleBtn = this.controller.querySelector('.play')
         this.playIconSystem(this.playToggleBtn)
@@ -49,6 +55,38 @@ class VideoPlayerBehaviour {
         this.pictureToPicture = this.controller.querySelector('.pictureToPicture')
         this.pictureToPictureToggle()
         this.watch()
+
+        //picture to picture
+        this.volume = this.controller.querySelector('.volume-bar')
+        this.volumeBar = this.controller.querySelector('.volume-bar .bar')
+        this.volumeValue = this.controller.querySelector('.volume-bar .value')
+        this.volumeCursor = this.controller.querySelector('.volume-bar .cursor')
+        this.volumeProcess()
+    }
+    volumeUpdate = (e) => {
+        if (!this.mouseDown) return
+        let ratio = e.offsetX / this.volume.getBoundingClientRect().width
+        this.volumeCursor.style.left = Math.round(ratio * 100) + '%';
+        this.volumeValue.style.width = Math.round(ratio * 100) + '%'
+        this.video.volume = ratio * ratio
+        localStorage.setItem('volume', JSON.stringify(this.video.volume))
+    }
+    firsVolumeValue() {
+        let volume = JSON.parse(localStorage.getItem('volume'))
+        this.video.volume = volume
+        this.volumeCursor.style.left = Math.round(volume ** .5 * 100) + '%';
+        this.volumeValue.style.width = Math.round(volume ** .5 * 100) + '%'
+    }
+    volumeProcess() {
+        this.firsVolumeValue()
+        this.mouseDown = false
+        this.timeline.addEventListener('mouseout', () => { this.mouseDown = false })
+        document.addEventListener('mouseup', (e) => { this.mouseDown = false })
+        this.volume.addEventListener('mousedown', (e) => {
+            this.mouseDown = true;
+            this.volumeUpdate(e)
+        })
+        this.volume.addEventListener('mousemove', this.volumeUpdate)
     }
     pictureToPictureToggle = () => {
         this.pictureToPicture.addEventListener('click', this.pictureToPictureSystem)
@@ -56,7 +94,7 @@ class VideoPlayerBehaviour {
     fixVideo = (player) => {
         let data = this.video.getBoundingClientRect()
         //container
-        
+
         player.parentNode.style.height = data.height + 'px'
         //player
         player.style.position = 'fixed'
@@ -86,7 +124,7 @@ class VideoPlayerBehaviour {
         this.controller.parentNode.classList.remove('pictureToPictureSmall')
         this.pictureToPicture.classList.add('pictureToPicture')
         this.pictureToPicture.classList.remove('exitminiature')
-        if(!this.controller.parentNode.parentNode) return
+        if (!this.controller.parentNode.parentNode) return
         this.controller.parentNode.parentNode.style.height = null
     }
     pictureToPictureSystem = () => {

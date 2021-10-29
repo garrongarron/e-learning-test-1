@@ -16,8 +16,8 @@ class VideoPlayerController extends Component {
                 <li class="volume-max"></li>
                 <li class="volume-bar">
                     <div class="bar">
-                    <div class="value"></div>
-                    <div class="cursor"></div>
+                        <div class="value"></div>
+                        <div class="cursor"></div>
                     </div>
                 </li>
                 <li class="timeline-bar">

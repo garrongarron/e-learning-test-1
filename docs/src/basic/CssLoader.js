@@ -12,7 +12,7 @@ class CssLoader{
         style.id = folder
         style.innerHTML = localStorage.getItem(_folder)
         document.head.appendChild(style)
-        // localStorage.removeItem(_folder)
+        localStorage.removeItem(_folder)
     }
     load(folder, cssList ){
         if (localStorage.getItem(folder)) {

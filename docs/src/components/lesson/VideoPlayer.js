@@ -104,3 +104,4 @@ class VideoPlayer extends Component {
 //let content = new VideoPlayer();
 //content.querySelector('.VideoPlayer')
 export default VideoPlayer;
+
