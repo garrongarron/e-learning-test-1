@@ -10,7 +10,7 @@
             let base = document.head.querySelector('base')
             base = (!base) ? document.createElement('base') : base
             base.href = host
-            document.head.appendChild(base)
+            document.head.insertBefore(base, document.head.firstChild);
         }
         if (location.origin == 'https://garrongarron.github.io') {
             addBase('https://garrongarron.github.io/e-learning-test-1/')
@@ -954,7 +954,7 @@ video{
         </div>
         <div class="lesson__video__container">
             <div class="lesson__videoplayer" style="position: relative; transition: none 0s ease 0s;">
-      <video preload="auto" style="display: none;" src="https://r4---sn-q0c7rn76.googlevideo.com/videoplayback?expire=1635491294&amp;ei=fkl7Ye3jH9aBxN8PuZeH2Ak&amp;ip=63.33.216.108&amp;id=o-AB0q9WWZd5nhtS4yTQSVP86kMe2D6K5rVdojRNzAjPiw&amp;itag=18&amp;source=youtube&amp;requiressl=yes&amp;mh=bv&amp;mm=31%2C26&amp;mn=sn-q0c7rn76%2Csn-aigzrney&amp;ms=au%2Conr&amp;mv=m&amp;mvi=4&amp;pl=18&amp;initcwndbps=306250&amp;vprv=1&amp;mime=video%2Fmp4&amp;ns=VVZIENqwwHrTdXZQEIFSuzwG&amp;gir=yes&amp;clen=19411607&amp;ratebypass=yes&amp;dur=528.021&amp;lmt=1528148674544900&amp;mt=1635469024&amp;fvip=6&amp;fexp=24001373%2C24007246&amp;c=WEB_EMBEDDED_PLAYER&amp;n=QqgnjVeTk4AdUjNbIXX&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&amp;sig=AOq0QJ8wRQIgKLAzKWQZNOFQoUg0Ttqf99a3EQSUriaIjlGAuSUn6isCIQC0-V8K5WEq_loxAZ4dr2DvbcJMudGAcarqb8EE547GeA%3D%3D&amp;lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&amp;lsig=AG3C_xAwRQIgN6G4pTTJyRIqB0aLLY2U8YZM0cWNBquwuexo1lOd1yYCIQDXFDQGyhPZD4iKzcnfB1ZvRFS2u6LlYX5aK36KaNdmHA%3D%3D">
+      <video preload="auto" style="display: none;" src="https://r4---sn-q0c7rn76.googlevideo.com/videoplayback?expire=1635491883&amp;ei=y0t7YdTwJqaNvdIPt5OfqAE&amp;ip=63.33.216.108&amp;id=o-AI_aD3QtcnCquQPRPj25gQfcyA6v9CJRprCP2BTElRiC&amp;itag=18&amp;source=youtube&amp;requiressl=yes&amp;mh=bv&amp;mm=31%2C26&amp;mn=sn-q0c7rn76%2Csn-aigl6nl7&amp;ms=au%2Conr&amp;mv=m&amp;mvi=4&amp;pl=18&amp;initcwndbps=380000&amp;vprv=1&amp;mime=video%2Fmp4&amp;ns=4n6vwGbP5jEk5BOJjQrxkIsG&amp;gir=yes&amp;clen=19411607&amp;ratebypass=yes&amp;dur=528.021&amp;lmt=1528148674544900&amp;mt=1635469734&amp;fvip=4&amp;fexp=24001373%2C24007246&amp;c=WEB_EMBEDDED_PLAYER&amp;n=MtOuDyCzXZ40-nbZEmt&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&amp;sig=AOq0QJ8wRQIhAK_67AbLCU5HQDzQf6Xq5Jm0f6-cJsSmRhg24kMkVmx2AiB-hoxIJTCSLNH2NxsFzGnRdIsmTo8eYjYGip30ts1ZYw%3D%3D&amp;lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&amp;lsig=AG3C_xAwRgIhALukPhX7Yp_cXvTMxFodP_dN5rrkgBigFUqRRlD3mzyMAiEArshuYrOW2Ad0i1KBk8WTyopPssv3-IqNcQAdnEfTqok%3D">
         <source type="video/mp4">
       </video>
       <div class="video-controller fadeIn">
