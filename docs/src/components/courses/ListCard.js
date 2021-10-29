@@ -11,6 +11,10 @@ class ListCard extends Component {
         localStorage.setItem('currentVideo', JSON.stringify(data))
         eventBus.dispatch('video-list', data)
         eventBus.dispatch('routing', '/curso.html')
+        eventBus.dispatch('nextPrevVideo', {
+            videos: searcher.database[e.currentTarget.dataset.list].list,
+            id: e.currentTarget.dataset.id
+        })
     }
     template({ data }) {
         let { title, img, interactionCount, type, id, uploadDate, list } = data

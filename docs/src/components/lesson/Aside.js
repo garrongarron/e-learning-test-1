@@ -9,7 +9,18 @@ class Aside extends Component {
         this.state.list = list
         this.setNewState(this.state)
     }
+    currentVideo() {
+        let current = localStorage.getItem('currentVideo') || null
+        if (current) {
+            let data = JSON.parse(current)
+            eventBus.dispatch('nextPrevVideo', {
+                videos: searcher.database[data.list].list,
+                id: data.id
+            })
+        }
+    }
     beforeAppendChild() {
+        // this.currentVideo()
         searcher.loadDatabase().then(a => {
             let items = Object.keys(searcher.database)
             let key = items[Math.floor(Math.random() * items.length)]
@@ -17,12 +28,12 @@ class Aside extends Component {
             if (current) {
                 let data = JSON.parse(current)
                 key = data.list
+                eventBus.dispatch('loadVideo', data.id)
+                this.process(searcher.database[key].list)
                 eventBus.dispatch('nextPrevVideo', {
                     videos: searcher.database[data.list].list,
                     id: data.id
                 })
-                eventBus.dispatch('loadVideo', data.id)
-                this.process(searcher.database[key].list)
             }
         })
         eventBus.subscribe('video-list', data => {
@@ -30,10 +41,11 @@ class Aside extends Component {
             if (data.id == '') {
                 data.id = searcher.database[data.list].list[0].videoId
             };
-            eventBus.dispatch('nextPrevVideo', {
+            let next = {
                 videos: searcher.database[data.list].list,
                 id: data.id
-            })
+            }
+            eventBus.dispatch('nextPrevVideo', next)
             eventBus.dispatch('loadVideo', data.id)
         })
     }
@@ -44,7 +56,7 @@ class Aside extends Component {
         this.state.list = this.state.list || []
         return `
     <aside class="lesson__aside">
-        <div class="card">
+        <div class="card progress">
             <h2>3d Game Creations</h2>
             <div class="bar">
                 <div class="quantity"></div>

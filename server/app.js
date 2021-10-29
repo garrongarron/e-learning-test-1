@@ -1,25 +1,26 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const public = 'docs'
-const routes = require('../' + public + '/src/pages/pages');
+let folder = 'docs'
+const routes = require('../'+folder+'/src/pages/pages');
 const scrapper = require('./Scrapper');
 var fs = require('fs');
 
-app.use(express.static(public))
+
+app.use(express.static(folder))
 let pagasGenerationInProcess = {}
 app.use((req, res, next) => {
-    let originalUrl = (req.originalUrl == '/') ? '/index.html' : req.originalUrl
+    let originalUrl = (req.originalUrl == '/')?'/index.html':req.originalUrl
     if (routes.hasOwnProperty(originalUrl)) {
-        if (!pagasGenerationInProcess[originalUrl]) {
+        if(!pagasGenerationInProcess[originalUrl]){
             pagasGenerationInProcess[originalUrl] = true
             scrapper(originalUrl).then(data => {
-                fs.writeFile(public + '/' + originalUrl, '<!DOCTYPE html>' + data.html, function (err) {
+                fs.writeFile(folder+'/' + originalUrl, '<!DOCTYPE html>'+data.html, function (err) {
                     if (err) throw err;
                     console.log('File is created successfully.');
                 });
             })
-        }
+        } 
     }
     const error = new Error('Not found');
     error.status = 404;

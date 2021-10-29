@@ -4,42 +4,79 @@
     box-shadow         : 0 0 10px gray;
     margin-top         : 60px;
     height             : calc(100vh - 60px);
-    padding-top        : 30px;
-    overflow-y: scroll;
-    position : fixed;
+    position           : fixed;
 }
-.lesson__aside .card{
-    border-bottom: 1px solid var(--brand_heading);
-    padding-left       : 20px;
-    padding-right      : 20px;
-    display:flex;
-    flex-flow: column;
+
+.lesson__aside .lesson-list {
+    /* background-color : red; */
+    height: calc(100vh - 200px);
+    overflow-y : scroll;
+}
+
+.lesson__aside .card {
+    border-bottom  : 1px solid var(--brand_heading);
+    padding-left   : 20px;
+    padding-right  : 20px;
+    display        : flex;
+    flex-flow      : column;
     justify-content: center;
-    align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    cursor: pointer;
+    align-items    : center;
+    padding-top    : 10px;
+    padding-bottom : 10px;
+    cursor         : pointer;
 }
-.lesson__aside .card.videos{
-    flex-flow: row;
+.lesson__aside .card.progress{
+    height: 140px;
+}
+
+.lesson__aside .card.videos {
+    flex-flow      : row;
     justify-content: flex-start;
+    transition: all 1s;   
 }
-.lesson__aside .card img{
-    width :100px; 
+
+.lesson__aside .card.videos.active {
+    background-color: var(--brand_primary);
+    color: white;
+}
+
+
+.lesson__aside .card.videos .card-img {
+    /* background-color: red; */
+    position   : relative;
+    display    : grid;
+    place-items: center;
+}
+
+.lesson__aside .card.videos .card-img .lengthText {
+    position        : absolute;
+    top             : 0;
+    right           : 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color           : white;
+    font-size       : .6rem;
+    padding         : .1rem .2rem;
+}
+
+.lesson__aside .card img {
+    width       : 100px;
     aspect-ratio: 16/9;
-    /* height: fit-content; */
-    align-items: flex-start; 
-    opacity: 0;
-    transition: all 0.4s;
+    /* height   : fit-content; */
+    align-items : flex-start;
+    opacity     : 0;
+    transition  : all 0.4s;
 }
-.lesson__aside .img-opacity1{
+
+.lesson__aside .img-opacity1 {
     opacity: 1 !important;
 }
-.lesson__aside .card .title{
-    font-size: .6rem !important;
+
+.lesson__aside .card .title {
+    font-size   : .6rem !important;
     padding-left: 10px;
-    font-weight   :bold;
+    font-weight : bold;
 }
+
 .lesson__aside h2 {
     margin        : 0;
     font-size     : .8rem;
@@ -67,8 +104,8 @@
 }
 
 .lesson__aside .desription {
-    padding-top: 15px;
-    width      : 100%;
-    text-align : center;
-    padding-bottom: 30px;
+    /* padding-top   : 15px; */
+    width         : 100%;
+    text-align    : center;
+    /* padding-bottom: 30px; */
 }

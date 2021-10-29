@@ -10,11 +10,10 @@ class Card extends Component {
     doSomething(e) {
         let video = e.target.getAttribute('data-video')
         eventBus.dispatch('loadVideo', video)
-        console.log(this.prop);
         let current = localStorage.getItem('currentVideo') || null
         if (!current) return
         let data = JSON.parse(current)
-        data.id = searcher.database[data.list].list
+        data.videos = searcher.database[data.list].list
         data.id = video
         localStorage.setItem('currentVideo', JSON.stringify(data))
         eventBus.dispatch('nextPrevVideo', data)
@@ -23,6 +22,7 @@ class Card extends Component {
     beforeAppendChild(parent) {
         let img = parent.querySelector('img')
         let container = parent.querySelector('.card-img')
+        
         setTimeout(() => {
             let watchMe = new IntersectionObserver(
                 (data) => {
@@ -41,9 +41,11 @@ class Card extends Component {
         }, 200);
     }
     template({ data: link }) {
+        // console.log(link);
         return `<div class="card videos" > 
-        <div class="card-img" data-img="${link.img}">
+        <div class="card-img" data-img="${link.img}" data-lengthText="${link.lengthText}">
             <img src="${Pixel}" click="doSomething" data-video="${link.videoId}">
+            <div class="lengthText">${link.lengthText}</div>
         </div>
         <div class="title" click="doSomething" data-video="${link.videoId}">${link.title}</div>
     </div>`

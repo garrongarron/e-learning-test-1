@@ -1,10 +1,17 @@
 import Component from "../../../js/Component.js";
 import eventBus from "../../basic/EventBus.js";
+import searcher from "../../searcher/Searcher.js";
 import Searcher from "../searcher/Searcher.js";
 
 class Header extends Component {
     setChildComponent() { return [Searcher]; }
-
+    color = (card) => {
+        document.querySelectorAll('.lesson-list .card').forEach(node => {
+            node.classList.remove('active')
+        })
+        card.parentNode.classList.add('active')
+        card.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    }
     beforeAppendChild(parent) {
         this.data = {
             next: null,
@@ -22,6 +29,21 @@ class Header extends Component {
             })
             this.videos = videos
             this.data = data
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+            //clean and select
+            let counter = 0
+            let n = setInterval(() => {
+                let card = document.querySelector('.lesson-list .card .title[data-video="' + id + '"]')
+                if(++counter >20) clearInterval(n)
+                if (card) {
+                    clearInterval(n)
+                    this.color(card)
+                } 
+            }, 100);
         })
         this.btnSearch = parent.querySelector('.btn-search')
         this.btnSearch.addEventListener('click', this.goToResults)
@@ -33,7 +55,18 @@ class Header extends Component {
                 localStorage.setItem('word', this.input.value)
                 eventBus.dispatch('to-seach', e)
             }
-        })        
+        })
+
+        // let currentVideo = localStorage.getItem('currentVideo') || null
+        // if (currentVideo) {
+        //     currentVideo = JSON.parse(currentVideo)
+        //     let next = {
+        //         videos: searcher.database[currentVideo.list].list,
+        //         id: currentVideo.id
+        //     }
+        //     eventBus.dispatch('nextPrevVideo', next)
+        // }
+
     }
     goToResults = () => {
         eventBus.dispatch('routing', '/cursos.html')
@@ -41,7 +74,7 @@ class Header extends Component {
     addEventListener() { return ['click'] }
     next() {
         if (this.data.next) {
-            eventBus.dispatch('loadVideo', this.data.next) 
+            eventBus.dispatch('loadVideo', this.data.next)
             eventBus.dispatch('nextPrevVideo', { videos: this.videos, id: this.data.next })
         }
     }
@@ -53,7 +86,7 @@ class Header extends Component {
     }
     updateCurrentVideo = (id) => {
         let current = localStorage.getItem('currentVideo') || null
-        if(!current)return
+        if (!current) return
         let data = JSON.parse(current)
         data.id = id
         localStorage.setItem('currentVideo', JSON.stringify(data))

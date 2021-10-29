@@ -27,8 +27,8 @@ class VideoPlayer extends Component {
   setChildComponent() { return [VideoPlayerController]; }
   memoryPosition = () => {
     try {
-      if(!document.body.contains(this.video)) clearInterval(VideoPlayer.positiontimer)
-      if(!this.video.currentTime) return
+      if (!document.body.contains(this.video)) clearInterval(VideoPlayer.positiontimer)
+      if (!this.video.currentTime) return
       currentTimeManager.setCurrentTime(this.state.video, this.video.currentTime)
     } catch (error) {
       console.log('error');
@@ -36,8 +36,8 @@ class VideoPlayer extends Component {
   }
   ready = () => {
     this.video.style.display = 'block'
-    if(document.body.contains(this.video)){
-      this.video.play()  
+    if (document.body.contains(this.video)) {
+      this.video.play()
     }
     this.video.removeAttribute('src')
     cache.appendChild(spinner)
@@ -62,9 +62,33 @@ class VideoPlayer extends Component {
     videoProvider.getUrl(this.state.video).then(url => {
       video.src = url[0].url
     })
+    video.addEventListener('error ', this.error)
+    
+    video.addEventListener('progress', function () {
+      let h1 = document.createElement('h1')
+      var range = 0;
+      var bf = this.buffered;
+      var time = this.currentTime;
+
+      while (!(bf.start(range) <= time && time <= bf.end(range))) {
+        range += 1;
+      }
+      var loadStartPercentage = bf.start(range) / this.duration;
+      var loadEndPercentage = bf.end(range) / this.duration;
+      var loadPercentage = loadEndPercentage - loadStartPercentage;
+      console.log(loadPercentage);
+
+      h1.innerHTML = loadPercentage+''
+    });
     //todo start
     parent.children[0].appendChild(spinner)
     video.style.display = 'none'
+  }
+  error = () => {
+    localStorage.setItem('videos', "{}")
+    videoProvider.getUrl(this.state.video).then(url => {
+      video.src = url[0].url
+    })
   }
   template({ }) {
     return `

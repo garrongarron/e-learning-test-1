@@ -1,6 +1,10 @@
 class VideoProvider {
     constructor() {
         this.urlProvider = 'https://samugarron.herokuapp.com/video/'
+        this.url= {}
+        this.purge()
+    }
+    purge(){
         this.url = JSON.parse(localStorage.getItem('videos') || '{}')
         Object.keys(this.url).forEach(video=>{
             this.url[video].forEach(element=>{
@@ -11,6 +15,7 @@ class VideoProvider {
         })
     }
     getUrl(videoId = 'jshcaIRvrB8') {
+        this.purge()
         if (!this.url[videoId]) {
             return new Promise((res, rej) => {
                 fetch(this.urlProvider + videoId).then(data => {
