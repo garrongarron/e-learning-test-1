@@ -1,4 +1,5 @@
-import Component from "../../../js/Component.js";
+// import Component from "../../../js/Component.js";
+import Component from "../../js/Component.js";
 import eventBus from "../basic/EventBus.js";
 import cssLoader from "../basic/CssLoader.js";
 import Header from "../components/landing/Header.js";

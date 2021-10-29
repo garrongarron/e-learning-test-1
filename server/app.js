@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const public = 'docs'
-const routes = require('../'+public+'/src/pages/pages');
+const routes = require('../' + public + '/src/pages/pages');
 const scrapper = require('./Scrapper');
 var fs = require('fs');
 
@@ -13,18 +13,18 @@ const localhost = 'http://localhost:3000/'
 app.use(express.static(public))
 let pagasGenerationInProcess = {}
 app.use((req, res, next) => {
-    let originalUrl = (req.originalUrl == '/')?'/index.html':req.originalUrl
+    let originalUrl = (req.originalUrl == '/') ? '/index.html' : req.originalUrl
     if (routes.hasOwnProperty(originalUrl)) {
-        if(!pagasGenerationInProcess[originalUrl]){
+        if (!pagasGenerationInProcess[originalUrl]) {
             pagasGenerationInProcess[originalUrl] = true
             scrapper(originalUrl).then(data => {
-                let html = data.html.replace(localhost,hostTarget)
-                fs.writeFile(public+'/' + originalUrl, '<!DOCTYPE html>'+html, function (err) {
+                let html = data.html.replace(localhost, hostTarget)
+                fs.writeFile(public + '/' + originalUrl, '<!DOCTYPE html>' + html, function (err) {
                     if (err) throw err;
                     console.log('File is created successfully.');
                 });
             })
-        } 
+        }
     }
     const error = new Error('Not found');
     error.status = 404;
