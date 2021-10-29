@@ -64,22 +64,22 @@ class VideoPlayer extends Component {
     })
     video.addEventListener('error ', this.error)
     
-    video.addEventListener('progress', function () {
-      let h1 = document.createElement('h1')
-      var range = 0;
-      var bf = this.buffered;
-      var time = this.currentTime;
+    // video.addEventListener('progress', function () {
+    //   let h1 = document.createElement('h1')
+    //   var range = 0;
+    //   var bf = this.buffered;
+    //   var time = this.currentTime;
 
-      while (!(bf.start(range) <= time && time <= bf.end(range))) {
-        range += 1;
-      }
-      var loadStartPercentage = bf.start(range) / this.duration;
-      var loadEndPercentage = bf.end(range) / this.duration;
-      var loadPercentage = loadEndPercentage - loadStartPercentage;
-      console.log(loadPercentage);
+    //   while (!(bf.start(range) <= time && time <= bf.end(range))) {
+    //     range += 1;
+    //   }
+    //   var loadStartPercentage = bf.start(range) / this.duration;
+    //   var loadEndPercentage = bf.end(range) / this.duration;
+    //   var loadPercentage = loadEndPercentage - loadStartPercentage;
+    //   console.log(loadPercentage);
 
-      h1.innerHTML = loadPercentage+''
-    });
+    //   h1.innerHTML = loadPercentage+''
+    // });
     //todo start
     parent.children[0].appendChild(spinner)
     video.style.display = 'none'
