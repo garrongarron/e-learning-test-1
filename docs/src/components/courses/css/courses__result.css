@@ -69,4 +69,5 @@
 .searcher-main .card-info {
     padding   : 5px;
     overflow-y: hidden;
+    cursor: pointer;
 }

@@ -10,6 +10,7 @@ class VideoPlayer extends Component {
   static staticVideo = null;
   static positiontimer = 0
   setState() {
+    this.quality = 1
     eventBus.subscribe('loadVideo', (video) => {
       if (!video) return console.error("Video null", video)
       this.done = false
@@ -20,6 +21,7 @@ class VideoPlayer extends Component {
       this.node.parentNode.style = ''
       this.node.appendChild(spinner)
     })
+    
     return {
       video: localStorage.getItem('latestVideo') || 'rr2H086z16s'
     }
@@ -60,7 +62,7 @@ class VideoPlayer extends Component {
     }
 
     videoProvider.getUrl(this.state.video).then(url => {
-      video.src = url[0].url
+      video.src = url[this.quality].url
     })
     video.addEventListener('error ', this.error)
     
@@ -87,7 +89,7 @@ class VideoPlayer extends Component {
   error = () => {
     localStorage.setItem('videos', "{}")
     videoProvider.getUrl(this.state.video).then(url => {
-      video.src = url[0].url
+      video.src = url[this.quality].url
     })
   }
   template({ }) {

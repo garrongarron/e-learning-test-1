@@ -72,7 +72,7 @@ class VideoPlayerBehaviour {
         localStorage.setItem('volume', JSON.stringify(this.video.volume))
     }
     firsVolumeValue() {
-        let volume = JSON.parse(localStorage.getItem('volume'))
+        let volume = JSON.parse(localStorage.getItem('volume')|| '1')
         this.video.volume = volume
         this.volumeCursor.style.left = Math.round(volume ** .5 * 100) + '%';
         this.volumeValue.style.width = Math.round(volume ** .5 * 100) + '%'

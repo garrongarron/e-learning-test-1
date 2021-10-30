@@ -19,12 +19,13 @@ class Main extends Component {
     template({ }) {
         return `<main>
             <Banner1></Banner1>
-            <WordCloud></WordCloud>
+            
             <!-- <BookImage></BookImage> -->
-            <BlocText></BlocText>
+            <!-- <BlockPricing></BlockPricing> -->
             <BlockCurriculum></BlockCurriculum>
-            <BlockPricing></BlockPricing>
-            <BlockColumns></BlockColumns>
+            <WordCloud></WordCloud>
+            <!-- <BlocText></BlocText> -->
+            <!-- <BlockColumns></BlockColumns> -->
             <!-- <BlockFeatured></BlockFeatured> -->
             <!-- <BookImage reverse="reverse"></BookImage> -->
             

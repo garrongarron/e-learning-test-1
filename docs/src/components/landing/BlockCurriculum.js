@@ -26,7 +26,7 @@ class BlockCurriculum extends Component {
     }
     goToList(e) {
         let data = {
-            list: e.target.dataset.list,
+            list: e.currentTarget.dataset.list,
             id: '',
         }
         localStorage.setItem('currentVideo', JSON.stringify(data))
@@ -45,10 +45,10 @@ class BlockCurriculum extends Component {
                 <h5>Listas de reproducción disponibles</h5>
                 <ul>
                     ${this.state.videos.map(list => `
-                    <li>
+                    <li click="goToList" data-list="${list.playlistId}">
                         <span class="icon"></span>
                         <span class="description">${list.title}</span>
-                        <span class="button" click="goToList" data-list="${list.playlistId}">Start</span>
+                        <span class="button" >Start</span>
                     </li>
                     `).join("")}
                 </ul>
